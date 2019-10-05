@@ -1,0 +1,49 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**",
+      "src/**/*.spec.ts"
+    ],
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.vue"
+    ]
+  },
+  "rules": {
+    "quotemark": [
+      true,
+      "double"
+    ],
+    "semicolon": [true, "always"],
+    "indent": [
+      true,
+      "spaces",
+      2
+    ],
+    "arrow-parens": [
+      true,
+      "ban-single-arg-parens"
+    ],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "never",
+        "singleline": "never"
+      }
+    ],
+    "curly": [
+      true,
+      "ignore-same-line"
+    ],
+    "interface-name": true,
+    "ordered-imports": true,
+    "no-consecutive-blank-lines": false,
+    "object-literal-sort-keys": true,
+    "no-console": true,
+    "variable-name": true
+  }
+}

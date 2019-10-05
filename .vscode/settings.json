@@ -1,0 +1,25 @@
+{
+    "editor.minimap.enabled": false,
+    "spellright.language": [
+        "hu"
+    ],
+    "spellright.documentTypes": [
+        "latex"
+    ],
+    "files.autoSave": "afterDelay",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.gitignore": false,
+        "**/.vscode": false,
+        "**/tsconfig.json": false,
+        "**/tslint.json": false,
+        "**/package-lock.json": true,
+        "**/dist": true,
+        "**/public": false,
+        "**/node_modules": true,
+        "**/*.js.map": true,
+        "**/*.npmrc": true
+    },
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false
+}
