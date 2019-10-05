@@ -36,5 +36,8 @@ export default class VuexDemoComp extends Vue {
 
 
 <style scoped>
+  ul {
+    list-style-type: none;
+  }
 </style>
 

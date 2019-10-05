@@ -13,5 +13,5 @@ import { Component, Vue } from "vue-property-decorator";
     VuexDemoComp
   }
 })
-export default class VuexDemo extends Vue {}
+export default class VuexDemoView extends Vue {}
 </script>

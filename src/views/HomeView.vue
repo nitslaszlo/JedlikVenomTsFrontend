@@ -14,5 +14,5 @@ import { Component, Vue } from "vue-property-decorator";
     HelloWorldComp
   }
 })
-export default class Home extends Vue {}
+export default class HomeView extends Vue {}
 </script>
