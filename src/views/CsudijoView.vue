@@ -1,5 +1,5 @@
 <template>
-  <div class="feladat1">
+  <div class="csudijo">
     <LegnepszerubbComp />
     <EtelkezeloComp />
   </div>
@@ -16,5 +16,5 @@ import { Component, Vue } from "vue-property-decorator";
     LegnepszerubbComp
   }
 })
-export default class Feladat1 extends Vue {}
+export default class CsudijoView extends Vue {}
 </script>

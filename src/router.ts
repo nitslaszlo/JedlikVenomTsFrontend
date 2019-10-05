@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Feladat1 from "./views/Feladat1.vue";
+import CsudijoView from "./views/CsudijoView.vue";
 import Home from "./views/Home.vue";
 import VuexDemo from "./views/VuexDemo.vue";
 
@@ -21,9 +21,9 @@ export default new Router({
       path: "/vuexdemo"
     },
     {
-      component: Feladat1,
-      name: "feladat1",
-      path: "/feladat1"
+      component: CsudijoView,
+      name: "csudijo",
+      path: "/csudijo"
     },
     {
       // route level code-splitting
