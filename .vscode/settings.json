@@ -5,8 +5,7 @@
         "hu"
     ],
     "spellright.documentTypes": [
-        "latex",
-        "markdown"
+        "latex"
     ],
     "files.autoSave": "afterDelay",
     "files.exclude": {
