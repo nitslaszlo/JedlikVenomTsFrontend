@@ -1,10 +1,12 @@
 {
     "editor.minimap.enabled": false,
     "spellright.language": [
+        "en",
         "hu"
     ],
     "spellright.documentTypes": [
-        "latex"
+        "latex",
+        "markdown"
     ],
     "files.autoSave": "afterDelay",
     "files.exclude": {
