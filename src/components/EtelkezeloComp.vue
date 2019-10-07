@@ -75,7 +75,7 @@ export default class EtelkezeloComp extends Vue {
   }
 
   private newVote(item: any): void {
-    const test: any = item;
+    this.$store.dispatch("newVote", item);
   }
 
   private deleteFood(item: any): void {
