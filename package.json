@@ -10,19 +10,24 @@
   },
   "author": "Nits László",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nitslaszlo/JedlikVenomTsFrontend"
+  },
   "devDependencies": {
-    "@types/node": "^12.7.11",
+    "@types/node": "^12.7.12",
     "@types/axios": "0.14.0",
-    "@vue/cli-plugin-typescript": "^3.11.0",
-    "@vue/cli-service": "^3.11.0",
+    "@vue/cli-plugin-typescript": "^3.12.0",
+    "@vue/cli-service": "^3.12.0",
     "tslint": "^5.20.0",
-    "typescript": "^3.6.3",
+    "typescript": "^3.6.4",
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
-    "bootstrap-vue": "^2.0.2",
+    "jquery": "3.4.1",
+    "bootstrap-vue": "^2.0.4",
     "portal-vue": "^2.1.6",
     "vue": "^2.6.10",
     "vue-class-component": "^7.1.0",
