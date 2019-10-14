@@ -5,6 +5,7 @@ import { Action, Module, Mutation, VuexModule } from "vuex-module-decorators";
 @Module
 export default class CsudijoModule extends VuexModule {
   // State:
+  private showEditForm: boolean = false;
   private editedFood: any;
   private foods: any = [];
 
@@ -75,6 +76,23 @@ export default class CsudijoModule extends VuexModule {
   }
 
   @Action
+  public async updateFood(food: any) {
+    axios
+      .put(`/csudijo/${food._id}`, food, this.config) // update kezdeményezése
+      .then((res: AxiosResponse) => {
+        if (res.data.errmsg || res.data.message) {
+          alert(res.data.errmsg ? res.data.errmsg : res.data.message);
+        } else {
+          this.context.dispatch("getAllFoods");
+        }
+      })
+      .catch((ex: AxiosError) => {
+        alert(ex.message);
+      });
+  }
+
+
+  @Action
   public async deleteFood(food: any) {
     if (confirm("Are you sure you want to delete this food?")) {
       const tmpFood: any = food;
@@ -96,5 +114,4 @@ export default class CsudijoModule extends VuexModule {
   private setAllFoods(data: any): void {
     this.foods = data;
   }
-
 }

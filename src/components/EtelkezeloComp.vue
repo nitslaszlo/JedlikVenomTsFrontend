@@ -16,15 +16,7 @@
           </b-col>
         </b-row>
       </b-container>
-      <b-modal v-model="modalShow" title="Edit record" size="lg">
-        <EtelSzerkComp />
-        <template v-slot:modal-footer>
-          <div class="w-100">
-            <b-button variant="success" size="sm" class="float-right m-1" @click="modalShow=false">Mentés</b-button>
-            <b-button variant="primary" size="sm" class="float-right m-1" @click="modalShow=false">Mégsem</b-button>
-          </div>
-        </template>
-      </b-modal>
+      <EtelSzerkComp v-if="modalShow"/>
       <b-table
         id="foodsTable"
         striped
@@ -37,7 +29,7 @@
         <template v-slot:cell(action)="row">
           <b-button-group>
             <b-button size="sm" @click="newVote(row.item)" variant="success">Szavaz</b-button>
-            <b-button size="sm" @click="editFood(row.item)" variant="info">Szerkeszt</b-button>
+            <b-button size="sm" @click="beforeEditFood(row.item)" variant="info">Szerkeszt</b-button>
             <b-button size="sm" @click="deleteFood(row.item)" variant="danger">Töröl</b-button>
           </b-button-group>
         </template>
@@ -56,7 +48,6 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import EtelSzerkComp from "@/components/EtelSzerkComp.vue";
-@Component
 @Component({
   components: {
     EtelSzerkComp
@@ -67,7 +58,6 @@ export default class EtelkezeloComp extends Vue {
   private perPage: number = 5;
   private newFoodName: string = "";
   private polling: number;
-  private modalShow: boolean = false;
 
   private foodFields = [
     { key: "foodName", label: "Étel neve", sortable: false },
@@ -87,7 +77,7 @@ export default class EtelkezeloComp extends Vue {
   }
 
   public beforeDestroy() {
-    clearInterval(this.polling);
+    // clearInterval(this.polling);
   }
 
   private newVote(item: any): void {
@@ -98,9 +88,9 @@ export default class EtelkezeloComp extends Vue {
     this.$store.dispatch("deleteFood", item);
   }
 
-  private editFood(item: any): void {
+  private beforeEditFood(item: any): void {
+    this.$store.state.editedFood = {...item}; // clone object with spread
     this.modalShow = true;
-    this.$store.state.editedFood = item;
   }
 
   private addNewFood(): void {
@@ -108,6 +98,14 @@ export default class EtelkezeloComp extends Vue {
       foodName: this.newFoodName,
       numberOfVote: 1
     });
+  }
+
+  private get modalShow(): boolean {
+    return this.$store.state.csudijoModule.showEditForm;
+  }
+
+  private set modalShow(value: boolean) {
+    this.$store.state.csudijoModule.showEditForm = value;
   }
 }
 </script>
