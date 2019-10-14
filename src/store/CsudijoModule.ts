@@ -5,7 +5,9 @@ import { Action, Module, Mutation, VuexModule } from "vuex-module-decorators";
 @Module
 export default class CsudijoModule extends VuexModule {
   // State:
+  private editedFood: any;
   private foods: any = [];
+
 
   private config: AxiosRequestConfig = {
     withCredentials: false,
