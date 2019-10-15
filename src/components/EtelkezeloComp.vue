@@ -81,7 +81,9 @@ export default class EtelkezeloComp extends Vue {
   }
 
   private newVote(item: any): void {
-    this.$store.dispatch("newVote", item);
+    const numberOfVotes: number = parseInt(item.numberOfVote, 10) + 1; // régi szavazatszám + 1
+    item.numberOfVote = numberOfVotes; // tárolás az objektumban
+    this.$store.dispatch("updateFood", item);
   }
 
   private deleteFood(item: any): void {

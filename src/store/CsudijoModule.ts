@@ -58,24 +58,6 @@ export default class CsudijoModule extends VuexModule {
   }
 
   @Action
-  public async newVote(food: any) {
-    const numberOfVotes: number = parseInt(food.numberOfVote, 10) + 1; // régi szavazatszám + 1
-    food.numberOfVote = numberOfVotes; // tárolás az objektumban
-    axios
-      .put(`/csudijo/${food._id}`, food, this.config) // update kezdeményezése
-      .then((res: AxiosResponse) => {
-        if (res.data.errmsg || res.data.message) {
-          alert(res.data.errmsg ? res.data.errmsg : res.data.message);
-        } else {
-          this.context.dispatch("getAllFoods");
-        }
-      })
-      .catch((ex: AxiosError) => {
-        alert(ex.message);
-      });
-  }
-
-  @Action
   public async updateFood(food: any) {
     axios
       .put(`/csudijo/${food._id}`, food, this.config) // update kezdeményezése
