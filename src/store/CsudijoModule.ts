@@ -8,6 +8,7 @@ export default class CsudijoModule extends VuexModule {
   private showEditForm: boolean = false;
   private editedFood: any;
   private foods: any = [];
+  private topFoods: any = [];
 
 
   private config: AxiosRequestConfig = {
@@ -20,6 +21,10 @@ export default class CsudijoModule extends VuexModule {
   // Getters
   get allFoods(): any[] {
     return this.foods;
+  }
+
+  get getTopFoods(): any[] {
+    return this.topFoods;
   }
 
   get numberOfFoods(): number {
@@ -42,6 +47,19 @@ export default class CsudijoModule extends VuexModule {
   }
 
   @Action
+  public async getTopFoodsList() {
+    axios
+      .get("/csudijobest", this.config)
+      .then((res: AxiosResponse) => {
+        const data: any = res.data;
+        this.context.commit("setTopFoods", data);
+      })
+      .catch((ex: AxiosError) => {
+        alert(ex.message);
+      });
+  }
+
+  @Action
   public async addNewFood(newFood: any) {
     axios
       .post("/csudijo", newFood, this.config)
@@ -50,6 +68,7 @@ export default class CsudijoModule extends VuexModule {
           alert(res.data.errmsg ? res.data.errmsg : res.data.message);
         } else {
           this.context.dispatch("getAllFoods");
+          this.context.dispatch("getTopFoodsList");
         }
       })
       .catch((ex: AxiosError) => {
@@ -68,6 +87,7 @@ export default class CsudijoModule extends VuexModule {
           alert(res.data.errmsg ? res.data.errmsg : res.data.message);
         } else {
           this.context.dispatch("getAllFoods");
+          this.context.dispatch("getTopFoodsList");
         }
       })
       .catch((ex: AxiosError) => {
@@ -84,6 +104,7 @@ export default class CsudijoModule extends VuexModule {
           alert(res.data.errmsg ? res.data.errmsg : res.data.message);
         } else {
           this.context.dispatch("getAllFoods");
+          this.context.dispatch("getTopFoodsList");
         }
       })
       .catch((ex: AxiosError) => {
@@ -103,6 +124,7 @@ export default class CsudijoModule extends VuexModule {
             alert(res.data.errmsg);
           }
           this.context.dispatch("getAllFoods");
+          this.context.dispatch("getTopFoodsList");
           alert(res.data.message);
         }).catch((ex: AxiosError) => {
           alert(ex.message);
@@ -114,4 +136,14 @@ export default class CsudijoModule extends VuexModule {
   private setAllFoods(data: any): void {
     this.foods = data;
   }
+
+  @Mutation
+  private setTopFoods(data: any): void {
+    this.topFoods = [];
+    if (!data.error)  {
+      this.topFoods = data.map((a: any) => a.foodName);
+    }
+  }
+
+
 }

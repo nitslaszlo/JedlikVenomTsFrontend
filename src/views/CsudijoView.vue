@@ -1,19 +1,19 @@
 <template>
   <div class="csudijo">
-    <LegnepszerubbComp />
+    <TopFoodsComp />
     <EtelkezeloComp />
   </div>
 </template>
 
 <script lang="ts">
 import EtelkezeloComp from "@/components/EtelkezeloComp.vue";
-import LegnepszerubbComp from "@/components/LegnepszerubbComp.vue";
+import TopFoodsComp from "@/components/TopFoodsComp.vue";
 import { Component, Vue } from "vue-property-decorator";
 
 @Component({
   components: {
     EtelkezeloComp,
-    LegnepszerubbComp
+    TopFoodsComp
   }
 })
 export default class CsudijoView extends Vue {}

@@ -1,7 +1,6 @@
 <template>
   <div class="etelkezelo">
     <section id="szavazas" class="szurke-hatter">
-      <h1>Ételek kezelése komponens</h1>
       <h2>Szavazzon a legnepszerűbb ételünkre</h2>
       <b-container fluid>
         <b-row>
@@ -112,15 +111,9 @@ export default class EtelkezeloComp extends Vue {
 
 
 <style scoped>
-h1 {
-  font-size: 1em;
-  font-weight: 300;
-}
-
 h2 {
-  padding-top: 10px;
   font-weight: 300;
-  margin-top: 30px; /* Így az ugrópontok nem kerülnek a nav-bar alá */
+  margin-bottom: 20px;
 }
 
 section {
