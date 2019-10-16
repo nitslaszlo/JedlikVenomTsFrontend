@@ -4,10 +4,11 @@ import { Action, Module, Mutation, VuexModule } from "vuex-module-decorators";
 
 @Module
 export default class CsudijoModule extends VuexModule {
-  // State (temp fields):
+  // State (temp fields, direct access from store):
   private __showEditForm: boolean = false;
   private __editedFood: any;
-  // State
+
+  // State (classic fields)
   private _foods: any = [];
   private _topFoods: any = [];
 
