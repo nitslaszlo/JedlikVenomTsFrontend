@@ -13,8 +13,8 @@ export default class TopFoodsComp extends Vue {
 
   private get topFoods(): string {
     let legnepszerubbEtel: string[] = ["Még nem szavaztak ételre!"];
-    if (this.$store.getters.getTopFoods.length > 0) {
-        legnepszerubbEtel = this.$store.getters.getTopFoods;
+    if (this.$store.getters.topFoods.length > 0) {
+        legnepszerubbEtel = this.$store.getters.topFoods;
     }
     return legnepszerubbEtel.join(" és a(z) ");
   }

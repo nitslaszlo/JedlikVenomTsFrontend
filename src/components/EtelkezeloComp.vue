@@ -20,7 +20,7 @@
         id="foodsTable"
         striped
         bordered
-        :items="this.$store.getters.allFoods"
+        :items="this.$store.getters.foods"
         :fields="foodFields"
         :per-page="perPage"
         :current-page="currentPageFoods"
@@ -71,6 +71,7 @@ export default class EtelkezeloComp extends Vue {
     // if (!this.polling) {
     //   this.polling = setInterval(() => {
     //     this.$store.dispatch("getAllFoods");
+    //     this.$store.dispatch("getTopFoodsList");
     //   }, 5000);
     // }
   }
@@ -90,7 +91,7 @@ export default class EtelkezeloComp extends Vue {
   }
 
   private beforeEditFood(item: any): void {
-    this.$store.state.editedFood = {...item}; // clone object with spread
+    this.$store.state.csudijoModule.__editedFood = {...item};
     this.modalShow = true;
   }
 
@@ -102,11 +103,11 @@ export default class EtelkezeloComp extends Vue {
   }
 
   private get modalShow(): boolean {
-    return this.$store.state.csudijoModule.showEditForm;
+    return this.$store.state.csudijoModule.__showEditForm;
   }
 
   private set modalShow(value: boolean) {
-    this.$store.state.csudijoModule.showEditForm = value;
+    this.$store.state.csudijoModule.__showEditForm = value;
   }
 }
 </script>

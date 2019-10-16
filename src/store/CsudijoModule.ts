@@ -4,11 +4,12 @@ import { Action, Module, Mutation, VuexModule } from "vuex-module-decorators";
 
 @Module
 export default class CsudijoModule extends VuexModule {
-  // State:
-  private showEditForm: boolean = false;
-  private editedFood: any;
-  private foods: any = [];
-  private topFoods: any = [];
+  // State (temp fields):
+  private __showEditForm: boolean = false;
+  private __editedFood: any;
+  // State
+  private _foods: any = [];
+  private _topFoods: any = [];
 
 
   private config: AxiosRequestConfig = {
@@ -19,12 +20,12 @@ export default class CsudijoModule extends VuexModule {
 
 
   // Getters
-  get allFoods(): any[] {
-    return this.foods;
+  get foods(): any[] {
+    return this._foods;
   }
 
-  get getTopFoods(): any[] {
-    return this.topFoods;
+  get topFoods(): any[] {
+    return this._topFoods;
   }
 
   get numberOfFoods(): number {
@@ -93,7 +94,6 @@ export default class CsudijoModule extends VuexModule {
       });
   }
 
-
   @Action
   public async deleteFood(food: any) {
     if (confirm("Are you sure you want to delete this food?")) {
@@ -115,16 +115,15 @@ export default class CsudijoModule extends VuexModule {
 
   @Mutation
   private setAllFoods(data: any): void {
-    this.foods = data;
+    this._foods = data;
   }
 
   @Mutation
   private setTopFoods(data: any): void {
-    this.topFoods = [];
+    this._topFoods = [];
     if (!data.error)  {
-      this.topFoods = data.map((a: any) => a.foodName);
+      this._topFoods = data.map((a: any) => a.foodName);
     }
   }
-
 
 }

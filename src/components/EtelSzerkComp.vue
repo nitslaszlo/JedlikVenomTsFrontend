@@ -45,31 +45,31 @@ import { Component, Vue } from "vue-property-decorator";
 @Component
 export default class EtelSzerkComp extends Vue {
   private get foodName(): string {
-    return this.$store.state.editedFood.foodName;
+    return this.$store.state.csudijoModule.__editedFood.foodName;
   }
 
   private set foodName(value: string) {
-    this.$store.state.editedFood.foodName = value;
+    this.$store.state.csudijoModule.__editedFood.foodName = value;
   }
 
   private get numberOfVote(): number {
-    return this.$store.state.editedFood.numberOfVote;
+    return this.$store.state.csudijoModule.__editedFood.numberOfVote;
   }
 
   private set numberOfVote(value: number) {
-    this.$store.state.editedFood.numberOfVote = value;
+    this.$store.state.csudijoModule.__editedFood.numberOfVote = value;
   }
 
   private get modalShow(): boolean {
-    return this.$store.state.csudijoModule.showEditForm;
+    return this.$store.state.csudijoModule.__showEditForm;
   }
 
   private set modalShow(value: boolean) {
-    this.$store.state.csudijoModule.showEditForm = value;
+    this.$store.state.csudijoModule.__showEditForm = value;
   }
 
   private afterEditFood(): void {
-    this.$store.dispatch("updateFood", this.$store.state.editedFood);
+    this.$store.dispatch("updateFood", this.$store.state.csudijoModule.__editedFood);
     this.modalShow = false;
   }
 
