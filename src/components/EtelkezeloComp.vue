@@ -56,7 +56,7 @@ export default class EtelkezeloComp extends Vue {
   private currentPageFoods: number = 1;
   private perPage: number = 5;
   private newFoodName: string = "";
-  private polling: number;
+  // private polling: number; // adatok 5mp-kénti frissítéséhez
 
   private foodFields = [
     { key: "foodName", label: "Étel neve", sortable: false },
