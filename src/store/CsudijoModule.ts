@@ -49,6 +49,21 @@ export default class CsudijoModule extends VuexModule {
   }
 
   @Action
+  public async getPageOfFoods(params: any) {
+    axios
+      .get(`/csudijo/page/${params.page}/pagination/${params.pagination}`, this.config)
+      .then((res: AxiosResponse) => {
+        const data: any = res.data;
+        if (data) {
+          this.context.commit("setAllFoods", data);
+        }
+      })
+      .catch((ex: AxiosError) => {
+        alert(ex.message);
+      });
+  }
+
+  @Action
   public async getTopFoodsList() {
     axios
       .get("/csudijobest", this.config)
@@ -123,7 +138,7 @@ export default class CsudijoModule extends VuexModule {
   private setTopFoods(data: any): void {
     this._topFoods = [];
     if (!data.error)  {
-      this._topFoods = data.map((a: any) => a.foodName);
+      this._topFoods = data;
     }
   }
 

@@ -37,6 +37,7 @@
         v-model="currentPageFoods"
         :total-rows="this.$store.getters.numberOfFoods"
         :per-page="perPage"
+        @change="pageChanged()"
         aria-controls="foodsTable"
         hide-goto-end-buttons
       ></b-pagination>
@@ -56,7 +57,7 @@ export default class EtelkezeloComp extends Vue {
   private currentPageFoods: number = 1;
   private perPage: number = 5;
   private newFoodName: string = "";
-  private polling: number;
+  // private polling: number; // adatok 5mp-kénti frissítéséhez
 
   private foodFields = [
     { key: "foodName", label: "Étel neve", sortable: false },
@@ -78,6 +79,12 @@ export default class EtelkezeloComp extends Vue {
 
   public beforeDestroy() {
     // clearInterval(this.polling); // adatok 5mp-enkénti frissítését törli
+  }
+
+   private pageChanged(): void {
+     this.$store.dispatch("getPageOfFoods", {page: this.currentPageFoods, pagination: this.perPage});
+     const a = 1;
+    // ddd
   }
 
   private newVote(item: any): void {
