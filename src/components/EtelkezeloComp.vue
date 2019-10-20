@@ -23,7 +23,7 @@
         :items="this.$store.getters.foods"
         :fields="foodFields"
         :per-page="this.$store.state.csudijoModule.__perPage"
-        :current-page="1"
+        current-page="1"
       >
         <template v-slot:cell(action)="row">
           <b-button-group>
@@ -54,8 +54,6 @@ import EtelSzerkComp from "@/components/EtelSzerkComp.vue";
   }
 })
 export default class EtelkezeloComp extends Vue {
-  // private currentPageFoods: number = 1;
-  // private perPage: number = 5;
   private newFoodName: string = "";
   // private polling: number; // adatok 5mp-kénti frissítéséhez
 
@@ -104,8 +102,6 @@ export default class EtelkezeloComp extends Vue {
         foodName: this.newFoodName,
         numberOfVote: 1
       });
-    // this.currentPage = Math.trunc(this.$store.getters.numberOfFoods / this.$store.state.csudijoModule.__perPage) + 1;
-    // this.$store.dispatch("getPageOfFoods");
   }
 
   private get modalShow(): boolean {
