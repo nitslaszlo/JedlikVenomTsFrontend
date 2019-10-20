@@ -1,0 +1,8 @@
+1. Telepítse és konfigurálja számítógépére a VS-Code Vue.js fejlesztői környezetet!
+2. Klónozza munkakönyvtárába a következő repository-kat:
+   - https://github.com/nitslaszlo/JedlikVenomTsBackend
+   - https://github.com/nitslaszlo/JedlikVenomTsFrontend
+3. Telepítse a klónozott repository-k lokális node csomagjait!
+4. Indítsa el a MongoDB szervert!
+5. Indítsa a backend, majd a frontend oldali alkalmazást!
+6. Minimalizálja a legnépszerűbb étel/ételek lekérdezésénél az adatforgalom mennyiségét! 
