@@ -27,8 +27,8 @@ Projektekben használt technológiák / megoldások:
 
 Rövidítések:
 ============
-VENoM - Vue.js, Express, Node.js, MongoDB
-Ts - Typescript
+1. VENoM - Vue.js, Express, Node.js, MongoDB
+2. Ts - Typescript
 
 Fejlesztői eszközök, MongoDB szerver:
 ======================================
