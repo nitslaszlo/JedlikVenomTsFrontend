@@ -15,15 +15,15 @@
           </b-col>
         </b-row>
       </b-container>
-      <EtelSzerkComp v-if="modalShow"/>
+      <EtelSzerkComp v-if="modalShow" />
       <b-table
         id="foodsTable"
         striped
         bordered
         :items="this.$store.getters.foods"
         :fields="foodFields"
-        :per-page="perPage"
-        :current-page="currentPageFoods"
+        :per-page="this.$store.state.csudijoModule.__perPage"
+        :current-page="1"
       >
         <template v-slot:cell(action)="row">
           <b-button-group>
@@ -34,10 +34,10 @@
         </template>
       </b-table>
       <b-pagination
-        v-model="currentPageFoods"
+        v-model="currentPage"
         :total-rows="this.$store.getters.numberOfFoods"
-        :per-page="perPage"
-        @change="pageChanged()"
+        :per-page="this.$store.state.csudijoModule.__perPage"
+        @input="pageChanged()"
         aria-controls="foodsTable"
         hide-goto-end-buttons
       ></b-pagination>
@@ -54,8 +54,8 @@ import EtelSzerkComp from "@/components/EtelSzerkComp.vue";
   }
 })
 export default class EtelkezeloComp extends Vue {
-  private currentPageFoods: number = 1;
-  private perPage: number = 5;
+  // private currentPageFoods: number = 1;
+  // private perPage: number = 5;
   private newFoodName: string = "";
   // private polling: number; // adatok 5mp-kénti frissítéséhez
 
@@ -66,13 +66,12 @@ export default class EtelkezeloComp extends Vue {
   ];
 
   public mounted() {
-    this.$store.dispatch("getAllFoods");
+    this.$store.dispatch("getPageOfFoods");
     // Adatok frissitése 5mp időközönként:
     // ===================================
     // if (!this.polling) {
     //   this.polling = setInterval(() => {
-    //     this.$store.dispatch("getAllFoods");
-    //     this.$store.dispatch("getTopFoodsList");
+    //     this.$store.dispatch("getPageOfFoods");
     //   }, 5000);
     // }
   }
@@ -81,10 +80,8 @@ export default class EtelkezeloComp extends Vue {
     // clearInterval(this.polling); // adatok 5mp-enkénti frissítését törli
   }
 
-   private pageChanged(): void {
-     this.$store.dispatch("getPageOfFoods", {page: this.currentPageFoods, pagination: this.perPage});
-     const a = 1;
-    // ddd
+  private pageChanged(): void {
+    this.$store.dispatch("getPageOfFoods");
   }
 
   private newVote(item: any): void {
@@ -98,15 +95,17 @@ export default class EtelkezeloComp extends Vue {
   }
 
   private beforeEditFood(item: any): void {
-    this.$store.state.csudijoModule.__editedFood = {...item};
+    this.$store.state.csudijoModule.__editedFood = { ...item };
     this.modalShow = true;
   }
 
   private addNewFood(): void {
     this.$store.dispatch("addNewFood", {
-      foodName: this.newFoodName,
-      numberOfVote: 1
-    });
+        foodName: this.newFoodName,
+        numberOfVote: 1
+      });
+    // this.currentPage = Math.trunc(this.$store.getters.numberOfFoods / this.$store.state.csudijoModule.__perPage) + 1;
+    // this.$store.dispatch("getPageOfFoods");
   }
 
   private get modalShow(): boolean {
@@ -115,6 +114,14 @@ export default class EtelkezeloComp extends Vue {
 
   private set modalShow(value: boolean) {
     this.$store.state.csudijoModule.__showEditForm = value;
+  }
+
+  private get currentPage(): number {
+    return this.$store.state.csudijoModule.__currentPage;
+  }
+
+  private set currentPage(value: number) {
+    this.$store.state.csudijoModule.__currentPage = value;
   }
 }
 </script>
