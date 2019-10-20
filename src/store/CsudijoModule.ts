@@ -7,7 +7,8 @@ export default class CsudijoModule extends VuexModule {
   // State (temp fields, direct access from store):
   private __showEditForm: boolean = false;
   private __editedFood: any;
-  private __currentPage: number = 1;
+  // private __polling: any;  // adatok frissítése 30mp-enként
+  private __currentPage: number = 1; // aktuálisan megjelenő oldal
   private __perPage: number = 5; // megjelenő rekordok száma
 
   // State (classic fields)
@@ -17,8 +18,8 @@ export default class CsudijoModule extends VuexModule {
 
 
   private config: AxiosRequestConfig = {
-    withCredentials: false,
-    baseURL: "https://localhost:3000",
+    withCredentials: true,
+    baseURL: "https://192.168.1.68:3000",
     timeout: 9000
   };
 

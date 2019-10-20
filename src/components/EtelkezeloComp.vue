@@ -27,11 +27,27 @@
       >
         <template v-slot:cell(action)="row">
           <b-button-group>
+            <b-button size="sm" @click="row.toggleDetails" variant="primary">{{ row.detailsShowing ? 'Rejt' : 'Mutat'}} egyéb</b-button>
             <b-button size="sm" @click="newVote(row.item)" variant="success">Szavaz</b-button>
-            <b-button size="sm" @click="beforeEditFood(row.item)" variant="info">Szerkeszt</b-button>
+            <b-button size="sm" @click="beforeEditFood(row.item)" variant="warning">Szerkeszt</b-button>
             <b-button size="sm" @click="deleteFood(row.item)" variant="danger">Töröl</b-button>
           </b-button-group>
         </template>
+        <template v-slot:row-details="row">
+        <b-card>
+          <b-row class="mb-2">
+            <b-col sm="3" class="text-sm-right"><b>Kép URL:</b></b-col>
+            <b-col>{{ row.item.foodName }}</b-col>
+          </b-row>
+
+          <b-row class="mb-2">
+            <b-col sm="3" class="text-sm-right"><b>Leírás:</b></b-col>
+            <b-col>{{ row.item.foodName  }}</b-col>
+          </b-row>
+
+          <b-button size="sm" @click="row.toggleDetails">Rejt egyéb</b-button>
+        </b-card>
+      </template>
       </b-table>
       <b-pagination
         v-model="currentPage"
@@ -55,7 +71,6 @@ import EtelSzerkComp from "@/components/EtelSzerkComp.vue";
 })
 export default class EtelkezeloComp extends Vue {
   private newFoodName: string = "";
-  // private polling: number; // adatok 5mp-kénti frissítéséhez
 
   private foodFields = [
     { key: "foodName", label: "Étel neve", sortable: false },
@@ -65,17 +80,17 @@ export default class EtelkezeloComp extends Vue {
 
   public mounted() {
     this.$store.dispatch("getPageOfFoods");
-    // Adatok frissitése 5mp időközönként:
-    // ===================================
-    // if (!this.polling) {
-    //   this.polling = setInterval(() => {
+    // Adatok frissitése 30mp időközönként:
+    // ====================================
+    // if (!this.$store.state.csudijoModule.__polling) {
+    //   this.$store.state.csudijoModule.__polling = setInterval(() => {
     //     this.$store.dispatch("getPageOfFoods");
-    //   }, 5000);
+    //   }, 30000);
     // }
   }
 
   public beforeDestroy() {
-    // clearInterval(this.polling); // adatok 5mp-enkénti frissítését törli
+     // clearInterval(this.$store.state.csudijoModule.__polling); // adatok 5mp-enkénti frissítését törli
   }
 
   private pageChanged(): void {
@@ -102,6 +117,10 @@ export default class EtelkezeloComp extends Vue {
         foodName: this.newFoodName,
         numberOfVote: 1
       });
+  }
+
+  private showDetails(item: any): void {
+    // ppp
   }
 
   private get modalShow(): boolean {
