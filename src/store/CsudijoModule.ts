@@ -40,7 +40,7 @@ export default class CsudijoModule extends VuexModule {
       .then((res: AxiosResponse) => {
         const data: any = res.data;
         if (data) {
-          this.context.commit("setAllFoods", data);
+          this.context.commit("mutateAllFoods", data);
         }
       })
       .catch((ex: AxiosError) => {
@@ -54,7 +54,7 @@ export default class CsudijoModule extends VuexModule {
       .get("/csudijobest", this.config)
       .then((res: AxiosResponse) => {
         const data: any = res.data;
-        this.context.commit("setTopFoods", data);
+        this.context.commit("mutateTopFoods", data);
       })
       .catch((ex: AxiosError) => {
         alert(ex.message);
@@ -115,12 +115,12 @@ export default class CsudijoModule extends VuexModule {
   }
 
   @Mutation
-  private setAllFoods(data: any): void {
+  private mutateAllFoods(data: any): void {
     this._foods = data;
   }
 
   @Mutation
-  private setTopFoods(data: any): void {
+  private mutateTopFoods(data: any): void {
     this._topFoods = [];
     if (!data.error)  {
       this._topFoods = data.map((a: any) => a.foodName);
