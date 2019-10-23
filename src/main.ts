@@ -7,9 +7,6 @@ import store from "./store";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import "bootstrap/dist/css/bootstrap.css";
 
-// HTTPS?
-// process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-
 Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false;
