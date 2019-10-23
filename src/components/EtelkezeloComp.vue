@@ -16,6 +16,14 @@
         </b-row>
       </b-container>
       <EtelSzerkComp v-if="modalShow" />
+      <b-pagination
+        v-model="currentPage"
+        :total-rows="this.$store.getters.numberOfFoods"
+        :per-page="this.$store.state.csudijoModule.__perPage"
+        @input="pageChanged()"
+        aria-controls="foodsTable"
+        hide-goto-end-buttons
+      ></b-pagination>
       <b-table
         id="foodsTable"
         striped
@@ -54,14 +62,6 @@
           </b-card>
         </template>
       </b-table>
-      <b-pagination
-        v-model="currentPage"
-        :total-rows="this.$store.getters.numberOfFoods"
-        :per-page="this.$store.state.csudijoModule.__perPage"
-        @input="pageChanged()"
-        aria-controls="foodsTable"
-        hide-goto-end-buttons
-      ></b-pagination>
     </section>
   </div>
 </template>
@@ -122,10 +122,6 @@ export default class EtelkezeloComp extends Vue {
       foodName: this.newFoodName,
       numberOfVote: 1
     });
-  }
-
-  private showDetails(item: any): void {
-    // ppp
   }
 
   private get modalShow(): boolean {

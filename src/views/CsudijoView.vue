@@ -13,7 +13,24 @@
     </header>
     <!-- Rólunk -->
     <div class="container">
-    
+      <!-- Étlap -->
+      <section id="etlap" class="szurke-hatter">
+        <h2>Ízelítő étlapunkról</h2>
+        <!-- Étel kártyák -->
+        <div class="row">
+          <div v-for="food in this.$store.getters.foods" :key="food._id" class="col-sm-12 col-md-6">
+            <div class="card">
+              <img class="card-img-top" :src="food.pictureUrl" />
+              <div class="card-body">
+                <h4 class="card-title">{{ food.foodName }} ({{ food.numberOfVote }}sz.)</h4>
+                <p
+                  class="card-text"
+                >{{ food.description.length > 450 ? food.description.substring(0, 500) + "..." : food.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
     <TopFoodsComp />
     <EtelkezeloComp />
@@ -80,5 +97,11 @@ p {
 }
 #rolunk img {
   max-width: 100%;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
 }
 </style>
