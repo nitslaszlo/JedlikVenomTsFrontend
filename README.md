@@ -27,8 +27,8 @@ Projektekben használt technológiák / megoldások:
 
 Rövidítések:
 ============
-VENoM - Vue.js, Express, Node.js, MongoDB
-Ts - Typescript
+1. VENoM - Vue.js, Express, Node.js, MongoDB
+2. Ts - Typescript
 
 Fejlesztői eszközök, MongoDB szerver:
 ======================================
@@ -73,3 +73,43 @@ Frontend:
 3. Node.js csomagok telepítése: Ctrl-ö (VS Code konzol ablak megnyitása), majd "npm i"
 4. Frontend projekt fordítása, indítása: "npm run serve" a konzol ablakból, vagy Ctrl-Shift-B
 5. Chrome indítása, http://localhost:8080 megnyitása, vagy Nyomkövetéshez F5-el lehet indítani a projektet
+
+Tesztelés nem a fejlesztői gépről (pl. mobil eszközről):
+========================================================
+1. CsudijoModule.ts:
+
+private config: AxiosRequestConfig = {
+    withCredentials: false,
+    // Az ip számot írd át a backend Network címére és portjára, pl.:
+    baseURL: "https://192.168.1.68:3000",
+    // baseURL: "https://localhost:3000", // ha egy gépen fut minden (tesztelő böngésző, frontend, backend)
+    timeout: 9000
+};
+
+2. vue.config.js (opcionális módosítás):
+
+// Hiba nélküli távoli teszthez kell csak, de ilyenkor nincs http://localhost:8080 a fejlesztő gépen
+// A frontend fordítását újra kell indítani!
+// Az ip számot írd át a frontend Network címére és portjára és vegyed ki megjegyzésből, pl.:
+    devServer: {
+         host: '192.168.1.68',
+         port: 8080
+    }
+
+3. launch.json (opcionális módosítás)
+// Ha a 2. pontban leírtakat beállítottad és szükséged van a nyomkövetés (F5) funkcióra a fejlesztői gépen:
+
+ "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "vuejs: chrome",
+            // "url": "http://localhost:8080",
+            "url": "http://192.168.1.68:8080",
+            "webRoot": "${workspaceFolder}/src",
+            "breakOnLoad": true,
+            "sourceMapPathOverrides": {
+                "webpack:///./src/*": "${webRoot}/*"
+            }
+        }
+    ]

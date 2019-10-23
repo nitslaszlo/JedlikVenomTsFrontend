@@ -5,7 +5,8 @@
         "hu"
     ],
     "spellright.documentTypes": [
-        "latex"
+        "latex",
+        "plaintext"
     ],
     "terminal.integrated.rendererType": "dom",
     "files.autoSave": "afterDelay",
