@@ -6,8 +6,7 @@
     ],
     "spellright.documentTypes": [
         "latex",
-        "plaintext",
-        "markdown"
+        "plaintext"
     ],
     "terminal.integrated.rendererType": "dom",
     "files.autoSave": "afterDelay",
