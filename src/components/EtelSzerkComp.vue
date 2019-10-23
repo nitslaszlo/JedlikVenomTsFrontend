@@ -28,6 +28,32 @@
             ></b-form-input>
           </b-col>
         </b-row>
+        <b-row class="my-1">
+          <b-col sm="4">
+            <label for="iDescription">Leírás:</label>
+          </b-col>
+          <b-col sm="3">
+            <b-form-input
+              id="iDescription"
+              placeholder="Leírás"
+              type="text"
+              v-model="description"
+            ></b-form-input>
+          </b-col>
+        </b-row>
+        <b-row class="my-1">
+          <b-col sm="4">
+            <label for="iPictureUrl">Kép URL:</label>
+          </b-col>
+          <b-col sm="3">
+            <b-form-input
+              id="iPictureUrl"
+              placeholder="Kép URL címe"
+              type="text"
+              v-model="pictureUrl"
+            ></b-form-input>
+          </b-col>
+        </b-row>
       </b-container>
       <template v-slot:modal-footer>
           <div class="w-100">
@@ -58,6 +84,22 @@ export default class EtelSzerkComp extends Vue {
 
   private set numberOfVote(value: number) {
     this.$store.state.csudijoModule.__editedFood.numberOfVote = value;
+  }
+
+  private get description(): number {
+    return this.$store.state.csudijoModule.__editedFood.description;
+  }
+
+  private set description(value: number) {
+    this.$store.state.csudijoModule.__editedFood.description = value;
+  }
+
+  private get pictureUrl(): number {
+    return this.$store.state.csudijoModule.__editedFood.pictureUrl;
+  }
+
+  private set pictureUrl(value: number) {
+    this.$store.state.csudijoModule.__editedFood.pictureUrl = value;
   }
 
   private get modalShow(): boolean {

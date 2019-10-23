@@ -27,27 +27,32 @@
       >
         <template v-slot:cell(action)="row">
           <b-button-group>
-            <b-button size="sm" @click="row.toggleDetails" variant="primary">{{ row.detailsShowing ? 'Rejt' : 'Mutat'}} egyéb</b-button>
+            <b-button
+              size="sm"
+              @click="row.toggleDetails"
+              variant="primary"
+            >{{ row.detailsShowing ? 'Rejt' : 'Mutat'}} egyéb</b-button>
             <b-button size="sm" @click="newVote(row.item)" variant="success">Szavaz</b-button>
             <b-button size="sm" @click="beforeEditFood(row.item)" variant="warning">Szerkeszt</b-button>
             <b-button size="sm" @click="deleteFood(row.item)" variant="danger">Töröl</b-button>
           </b-button-group>
         </template>
         <template v-slot:row-details="row">
-        <b-card>
-          <b-row class="mb-2">
-            <b-col sm="3" class="text-sm-right"><b>Kép URL:</b></b-col>
-            <b-col>{{ row.item.foodName }}</b-col>
-          </b-row>
-
-          <b-row class="mb-2">
-            <b-col sm="3" class="text-sm-right"><b>Leírás:</b></b-col>
-            <b-col>{{ row.item.foodName  }}</b-col>
-          </b-row>
-
-          <b-button size="sm" @click="row.toggleDetails">Rejt egyéb</b-button>
-        </b-card>
-      </template>
+          <b-card>
+            <b-row class="mb-2">
+              <b-col sm="3" class="text-sm-right">
+                <b>Leirás:</b>
+              </b-col>
+              <b-col>{{ row.item.description }}</b-col>
+            </b-row>
+            <b-row class="mb-2">
+              <b-col sm="3" class="text-sm-right">
+                <b>Kép URL:</b>
+              </b-col>
+              <b-col>{{ row.item.pictureUrl }}</b-col>
+            </b-row>
+          </b-card>
+        </template>
       </b-table>
       <b-pagination
         v-model="currentPage"
@@ -90,7 +95,7 @@ export default class EtelkezeloComp extends Vue {
   }
 
   public beforeDestroy() {
-     // clearInterval(this.$store.state.csudijoModule.__polling); // adatok 5mp-enkénti frissítését törli
+    // clearInterval(this.$store.state.csudijoModule.__polling); // adatok 5mp-enkénti frissítését törli
   }
 
   private pageChanged(): void {
@@ -114,9 +119,9 @@ export default class EtelkezeloComp extends Vue {
 
   private addNewFood(): void {
     this.$store.dispatch("addNewFood", {
-        foodName: this.newFoodName,
-        numberOfVote: 1
-      });
+      foodName: this.newFoodName,
+      numberOfVote: 1
+    });
   }
 
   private showDetails(item: any): void {

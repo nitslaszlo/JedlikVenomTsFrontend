@@ -40,7 +40,7 @@ nav {
 }
 #fejlec {
   min-height: 100px;
-  background-image: url("./kepek/etterem.jpg");
+  background-image: url("kepek/etterem.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
