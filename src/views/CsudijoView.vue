@@ -101,7 +101,7 @@ p {
 
 .card-img-top {
   width: 100%;
-  height: 15vw;
+  height: 30vh;
   object-fit: cover;
 }
 </style>

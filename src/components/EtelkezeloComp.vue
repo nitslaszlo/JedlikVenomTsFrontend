@@ -34,30 +34,32 @@
         current-page="1"
       >
         <template v-slot:cell(action)="row">
-          <b-button-group>
-            <b-button
-              size="sm"
-              @click="row.toggleDetails"
-              variant="primary"
-            >{{ row.detailsShowing ? 'Rejt' : 'Mutat'}} egyéb</b-button>
-            <b-button size="sm" @click="newVote(row.item)" variant="success">Szavaz</b-button>
-            <b-button size="sm" @click="beforeEditFood(row.item)" variant="warning">Szerkeszt</b-button>
-            <b-button size="sm" @click="deleteFood(row.item)" variant="danger">Töröl</b-button>
-          </b-button-group>
+          <b-button
+            size="sm"
+            @click="row.toggleDetails"
+            variant="primary"
+          >{{ row.detailsShowing ? 'Rejt' : 'Mutat'}}</b-button>
         </template>
         <template v-slot:row-details="row">
           <b-card>
+            <b-row class="mb-2" align-h="center">
+              <b-button-group>
+                <b-button size="sm" @click="newVote(row.item)" variant="success">Szavaz</b-button>
+                <b-button size="sm" @click="beforeEditFood(row.item)" variant="warning">Szerkeszt</b-button>
+                <b-button size="sm" @click="deleteFood(row.item)" variant="danger">Töröl</b-button>
+              </b-button-group>
+            </b-row>
             <b-row class="mb-2">
               <b-col sm="3" class="text-sm-right">
                 <b>Leirás:</b>
               </b-col>
-              <b-col>{{ row.item.description }}</b-col>
+              <b-col sm="9">{{ row.item.description }}</b-col>
             </b-row>
             <b-row class="mb-2">
               <b-col sm="3" class="text-sm-right">
                 <b>Kép URL:</b>
               </b-col>
-              <b-col>{{ row.item.pictureUrl }}</b-col>
+              <b-col sm="9">{{ row.item.pictureUrl }}</b-col>
             </b-row>
           </b-card>
         </template>
@@ -80,7 +82,7 @@ export default class EtelkezeloComp extends Vue {
   private foodFields = [
     { key: "foodName", label: "Étel neve", sortable: false },
     { key: "numberOfVote", label: "Szavazatok", sortable: false },
-    { key: "action", label: "Akció gombok", sortable: false }
+    { key: "action", label: "Egyéb", sortable: false }
   ];
 
   public mounted() {
