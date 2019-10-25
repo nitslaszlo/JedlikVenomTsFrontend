@@ -144,7 +144,6 @@ export default class EtelkezeloComp extends Vue {
 }
 </script>
 
-
 <style scoped>
 h2 {
   font-weight: 300;

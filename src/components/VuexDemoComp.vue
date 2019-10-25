@@ -19,7 +19,6 @@
   </div>
 </template>
 
-
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 @Component
@@ -34,10 +33,8 @@ export default class VuexDemoComp extends Vue {
 }
 </script>
 
-
 <style scoped>
   ul {
     list-style-type: none;
   }
 </style>
-

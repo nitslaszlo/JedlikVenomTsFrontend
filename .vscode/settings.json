@@ -1,5 +1,13 @@
 {
     "editor.minimap.enabled": false,
+    "eslint.alwaysShowStatus": true,
+    "eslint.enable": true,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "vue"
+    ],
     "spellright.language": [
         "en",
         "hu"

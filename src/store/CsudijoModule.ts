@@ -1,7 +1,6 @@
 import axios, { AxiosResponse, AxiosError, AxiosRequestConfig } from "axios";
 import { Action, Module, Mutation, VuexModule } from "vuex-module-decorators";
 
-
 @Module
 export default class CsudijoModule extends VuexModule {
   // State (temp fields, direct access from store):
@@ -16,14 +15,12 @@ export default class CsudijoModule extends VuexModule {
   private _topFoods: any = [];
   private _numberOfFoods: number = -1;
 
-
   private config: AxiosRequestConfig = {
     withCredentials: false,
     // baseURL: "https://192.168.1.68:3000",
     baseURL: "https://localhost:3000",
     timeout: 9000
   };
-
 
   // Getters
   get foods(): any[] {
@@ -65,9 +62,7 @@ export default class CsudijoModule extends VuexModule {
           this.context.commit("mutateNumberOfFoods", data);
         }
       })
-      .catch((ex: AxiosError) => {
-        alert(ex.message);
-      });
+      .catch((ex: AxiosError) => alert(ex.message));
   }
 
   @Action
@@ -82,9 +77,7 @@ export default class CsudijoModule extends VuexModule {
           this.context.dispatch("getNumberOfFoods");
         }
       })
-      .catch((ex: AxiosError) => {
-        alert(ex.message);
-      });
+      .catch((ex: AxiosError) => alert(ex.message));
   }
 
   @Action
@@ -95,9 +88,7 @@ export default class CsudijoModule extends VuexModule {
         const data: any = res.data;
         this.context.commit("mutateTopFoods", data);
       })
-      .catch((ex: AxiosError) => {
-        alert(ex.message);
-      });
+      .catch((ex: AxiosError) => alert(ex.message));
   }
 
   @Action
@@ -111,9 +102,7 @@ export default class CsudijoModule extends VuexModule {
           this.context.dispatch("getPageOfFoods");
         }
       })
-      .catch((ex: AxiosError) => {
-        alert(ex.message);
-      });
+      .catch((ex: AxiosError) => alert(ex.message));
   }
 
   @Action
@@ -127,9 +116,7 @@ export default class CsudijoModule extends VuexModule {
           this.context.dispatch("getPageOfFoods");
         }
       })
-      .catch((ex: AxiosError) => {
-        alert(ex.message);
-      });
+      .catch((ex: AxiosError) => alert(ex.message));
   }
 
   @Action
@@ -143,9 +130,8 @@ export default class CsudijoModule extends VuexModule {
           }
           this.context.dispatch("getPageOfFoods");
           alert(res.data.message);
-        }).catch((ex: AxiosError) => {
-          alert(ex.message);
-        });
+        })
+        .catch((ex: AxiosError) => alert(ex.message));
     }
   }
 
@@ -162,9 +148,8 @@ export default class CsudijoModule extends VuexModule {
   @Mutation
   private mutateTopFoods(data: any): void {
     this._topFoods = [];
-    if (!data.error)  {
+    if (!data.error) {
       this._topFoods = data;
     }
   }
-
 }

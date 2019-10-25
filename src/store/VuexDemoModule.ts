@@ -22,5 +22,4 @@ export default class VuexDemoModule extends VuexModule {
   private removeTvMut(amount: number): void {
     this.totalTvCount -= amount;
   }
-
 }
