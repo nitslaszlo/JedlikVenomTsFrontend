@@ -20,21 +20,16 @@
             <label for="iVotes">Szavazatok száma:</label>
           </b-col>
           <b-col sm="3">
-            <b-form-input
-              id="iVotes"
-              placeholder="Szavazatok"
-              type="number"
-              v-model="numberOfVote"
-            ></b-form-input>
+            <b-form-input id="iVotes" placeholder="Szavazatok" type="number" v-model="numberOfVote"></b-form-input>
           </b-col>
         </b-row>
       </b-container>
       <template v-slot:modal-footer>
-          <div class="w-100">
-            <b-button variant="success" size="sm" class="float-right m-1" @click="afterEditFood">Mentés</b-button>
-            <b-button variant="primary" size="sm" class="float-right m-1" @click="modalShow=false">Mégsem</b-button>
-          </div>
-        </template>
+        <div class="w-100">
+          <b-button variant="success" size="sm" class="float-right m-1" @click="afterEditFood">Mentés</b-button>
+          <b-button variant="primary" size="sm" class="float-right m-1" @click="modalShow = false">Mégsem</b-button>
+        </div>
+      </template>
     </b-modal>
   </div>
 </template>
@@ -72,7 +67,6 @@ export default class EtelSzerkComp extends Vue {
     this.$store.dispatch("updateFood", this.$store.state.csudijoModule.__editedFood);
     this.modalShow = false;
   }
-
 }
 </script>
 

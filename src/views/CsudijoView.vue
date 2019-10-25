@@ -12,9 +12,7 @@
       </div>
     </header>
     <!-- Rólunk -->
-    <div class="container">
-    
-    </div>
+    <div class="container"></div>
     <TopFoodsComp />
     <EtelkezeloComp />
   </div>

@@ -5,16 +5,14 @@
   </div>
 </template>
 
-
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 @Component
 export default class TopFoodsComp extends Vue {
-
   private get topFoods(): string {
     let legnepszerubbEtel: string[] = ["Még nem szavaztak ételre!"];
     if (this.$store.getters.topFoods.length > 0) {
-        legnepszerubbEtel = this.$store.getters.topFoods;
+      legnepszerubbEtel = this.$store.getters.topFoods;
     }
     return legnepszerubbEtel.join(" és a(z) ");
   }
@@ -25,6 +23,4 @@ export default class TopFoodsComp extends Vue {
 }
 </script>
 
-
-<style scoped>
-</style>
+<style scoped></style>

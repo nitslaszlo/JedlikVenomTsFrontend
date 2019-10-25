@@ -1,7 +1,6 @@
 import axios, { AxiosResponse, AxiosError, AxiosRequestConfig } from "axios";
 import { Action, Module, Mutation, VuexModule } from "vuex-module-decorators";
 
-
 @Module
 export default class CsudijoModule extends VuexModule {
   // State (temp fields, direct access from store):
@@ -12,7 +11,6 @@ export default class CsudijoModule extends VuexModule {
   private _foods: any = [];
   private _topFoods: any = [];
 
-
   private config: AxiosRequestConfig = {
     withCredentials: false,
     // Az ip számot írd át a backend Network címére és portjára, pl.:
@@ -20,7 +18,6 @@ export default class CsudijoModule extends VuexModule {
     baseURL: "https://localhost:3000", // ha egy gépen fut minden (tesztelő böngésző, frontend, backend)
     timeout: 9000
   };
-
 
   // Getters
   get foods(): any[] {
@@ -110,7 +107,8 @@ export default class CsudijoModule extends VuexModule {
           this.context.dispatch("getAllFoods");
           this.context.dispatch("getTopFoodsList");
           alert(res.data.message);
-        }).catch((ex: AxiosError) => {
+        })
+        .catch((ex: AxiosError) => {
           alert(ex.message);
         });
     }
@@ -124,9 +122,8 @@ export default class CsudijoModule extends VuexModule {
   @Mutation
   private mutateTopFoods(data: any): void {
     this._topFoods = [];
-    if (!data.error)  {
+    if (!data.error) {
       this._topFoods = data.map((a: any) => a.foodName);
     }
   }
-
 }

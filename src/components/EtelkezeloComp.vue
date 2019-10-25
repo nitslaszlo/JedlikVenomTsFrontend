@@ -15,7 +15,7 @@
           </b-col>
         </b-row>
       </b-container>
-      <EtelSzerkComp v-if="modalShow"/>
+      <EtelSzerkComp v-if="modalShow" />
       <b-table
         id="foodsTable"
         striped
@@ -91,7 +91,7 @@ export default class EtelkezeloComp extends Vue {
   }
 
   private beforeEditFood(item: any): void {
-    this.$store.state.csudijoModule.__editedFood = {...item};
+    this.$store.state.csudijoModule.__editedFood = { ...item };
     this.modalShow = true;
   }
 
@@ -111,7 +111,6 @@ export default class EtelkezeloComp extends Vue {
   }
 }
 </script>
-
 
 <style scoped>
 h2 {

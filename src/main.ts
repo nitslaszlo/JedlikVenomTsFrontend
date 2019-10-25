@@ -17,7 +17,6 @@ new Vue({
   store
 }).$mount("#app");
 
-
 // Links
 // https://itnext.io/vuex-made-simple-getting-started-6bf229d432cf
 // https://medium.com/dailyjs/mastering-vuex-zero-to-hero-e0ca1f421d45
