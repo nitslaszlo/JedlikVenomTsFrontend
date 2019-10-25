@@ -66,7 +66,7 @@ export default class CsudijoModule extends VuexModule {
   }
 
   @Action
-  public async getPageOfFoods(): Promise<any>  {
+  public async getPageOfFoods(): Promise<any> {
     axios
       .get(`/csudijo/page/${this.__currentPage}/perPage/${this.__perPage}`, this.config)
       .then((res: AxiosResponse) => {
@@ -81,7 +81,7 @@ export default class CsudijoModule extends VuexModule {
   }
 
   @Action
-  public async getTopFoodsList(): Promise<any>  {
+  public async getTopFoodsList(): Promise<any> {
     axios
       .get("/csudijobest", this.config)
       .then((res: AxiosResponse) => {
@@ -92,7 +92,7 @@ export default class CsudijoModule extends VuexModule {
   }
 
   @Action
-  public async addNewFood(newFood: any): Promise<any>  {
+  public async addNewFood(newFood: any): Promise<any> {
     axios
       .post("/csudijo", newFood, this.config)
       .then((res: AxiosResponse) => {
@@ -106,7 +106,7 @@ export default class CsudijoModule extends VuexModule {
   }
 
   @Action
-  public async updateFood(food: any): Promise<any>  {
+  public async updateFood(food: any): Promise<any> {
     axios
       .put(`/csudijo/${food._id}`, food, this.config) // update kezdeményezése
       .then((res: AxiosResponse) => {
@@ -120,7 +120,7 @@ export default class CsudijoModule extends VuexModule {
   }
 
   @Action
-  public async deleteFood(food: any): Promise<any>  {
+  public async deleteFood(food: any): Promise<any> {
     if (confirm("Are you sure you want to delete this food?")) {
       axios
         .delete(`/csudijo/${food._id}`, this.config)

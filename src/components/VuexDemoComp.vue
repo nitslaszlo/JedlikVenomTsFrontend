@@ -9,11 +9,9 @@
     <h3>Demo Link:</h3>
     <ul>
       <li>
-        <a
-          href="https://itnext.io/vuex-made-simple-getting-started-6bf229d432cf"
-          target="_blank"
-          rel="noopener"
-        >Vuex made simple</a>
+        <a href="https://itnext.io/vuex-made-simple-getting-started-6bf229d432cf" target="_blank" rel="noopener"
+          >Vuex made simple</a
+        >
       </li>
     </ul>
   </div>
@@ -34,7 +32,7 @@ export default class VuexDemoComp extends Vue {
 </script>
 
 <style scoped>
-  ul {
-    list-style-type: none;
-  }
+ul {
+  list-style-type: none;
+}
 </style>

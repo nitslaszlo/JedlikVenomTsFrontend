@@ -23,9 +23,9 @@
               <img class="card-img-top" :src="food.pictureUrl" />
               <div class="card-body">
                 <h4 class="card-title">{{ food.foodName }} ({{ food.numberOfVote }}sz.)</h4>
-                <p
-                  class="card-text"
-                >{{ food.description.length > 450 ? food.description.substring(0, 500) + "..." : food.description }}</p>
+                <p class="card-text">
+                  {{ food.description.length > 450 ? food.description.substring(0, 500) + "..." : food.description }}
+                </p>
               </div>
             </div>
           </div>

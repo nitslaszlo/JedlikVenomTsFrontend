@@ -43,29 +43,14 @@
             <label for="iPictureUrl">Kép URL:</label>
           </b-col>
           <b-col sm="9">
-            <b-form-input
-              id="iPictureUrl"
-              placeholder="Kép URL címe"
-              type="text"
-              v-model="pictureUrl"
-            ></b-form-input>
+            <b-form-input id="iPictureUrl" placeholder="Kép URL címe" type="text" v-model="pictureUrl"></b-form-input>
           </b-col>
         </b-row>
       </b-container>
       <template v-slot:modal-footer>
         <div class="w-100">
-          <b-button
-            variant="success"
-            size="sm"
-            class="float-right m-1"
-            @click="afterEditFood"
-          >Mentés</b-button>
-          <b-button
-            variant="primary"
-            size="sm"
-            class="float-right m-1"
-            @click="modalShow=false"
-          >Mégsem</b-button>
+          <b-button variant="success" size="sm" class="float-right m-1" @click="afterEditFood">Mentés</b-button>
+          <b-button variant="primary" size="sm" class="float-right m-1" @click="modalShow = false">Mégsem</b-button>
         </div>
       </template>
     </b-modal>
@@ -118,10 +103,7 @@ export default class EtelSzerkComp extends Vue {
   }
 
   private afterEditFood(): void {
-    this.$store.dispatch(
-      "updateFood",
-      this.$store.state.csudijoModule.__editedFood
-    );
+    this.$store.dispatch("updateFood", this.$store.state.csudijoModule.__editedFood);
     this.modalShow = false;
   }
 }

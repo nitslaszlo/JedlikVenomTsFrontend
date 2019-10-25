@@ -7,10 +7,10 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item :to="{ name: 'home'}">Home</b-nav-item>
-          <b-nav-item :to="{ name: 'vuexDemo'}">VuexDemo</b-nav-item>
-          <b-nav-item :to="{ name: 'csudijo'}">Csudijo</b-nav-item>
-          <b-nav-item :to="{ name: 'about'}">About</b-nav-item>
+          <b-nav-item :to="{ name: 'home' }">Home</b-nav-item>
+          <b-nav-item :to="{ name: 'vuexDemo' }">VuexDemo</b-nav-item>
+          <b-nav-item :to="{ name: 'csudijo' }">Csudijo</b-nav-item>
+          <b-nav-item :to="{ name: 'about' }">About</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -21,7 +21,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 @Component
-export default class App extends Vue { }
+export default class App extends Vue {}
 </script>
 
 <style>
