@@ -15,8 +15,8 @@ export default class CsudijoModule extends VuexModule {
     // withCredentials: true,
     withCredentials: false,
     // Az ip számot írd át a backend Network címére és portjára, pl.:
-    baseURL: "http://192.168.1.68:3000",
-    // baseURL: "http://localhost:3000", // ha egy gépen fut minden (tesztelő böngésző, frontend, backend)
+    // baseURL: "http://192.168.1.68:3000",
+    baseURL: "http://localhost:3000", // ha egy gépen fut minden (tesztelő böngésző, frontend, backend)
     timeout: 9000
   };
 
