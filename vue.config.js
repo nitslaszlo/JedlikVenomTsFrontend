@@ -3,8 +3,8 @@ module.exports = {
   // A frontend fordítását újra kell indítani!
   // Az ip számot írd át a frontend Network címére és portjára, pl.:
   // devServer: {
-  //     host: "192.168.1.68",
-  //     port: 8080
+  //   host: "192.168.1.68",
+  //   port: 8080
   // },
   configureWebpack: config => {
     config.devtool = "source-map";
