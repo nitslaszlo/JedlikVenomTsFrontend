@@ -17,8 +17,8 @@ export default class CsudijoModule extends VuexModule {
 
   private config: AxiosRequestConfig = {
     withCredentials: false,
-    // baseURL: "https://192.168.1.68:3000",
-    baseURL: "https://localhost:3000",
+    baseURL: "http://192.168.1.68:3000",
+    // baseURL: "http://localhost:3000",
     timeout: 9000
   };
 
