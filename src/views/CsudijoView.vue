@@ -18,13 +18,13 @@
         <h2>Ízelítő étlapunkról</h2>
         <!-- Étel kártyák -->
         <div class="row">
-          <div v-for="food in this.$store.getters.foods" :key="food._id" class="col-sm-12 col-md-6">
+          <div v-for="food in this.$store.getters.foods" :key="food._id" class="col-sm-12 col-md-6 col-xl-4">
             <div class="card">
-              <img class="card-img-top" :src="food.pictureUrl" />
+              <img v-if="food.pictureUrl" class="card-img-top" :src="food.pictureUrl" />
               <div class="card-body">
                 <h4 class="card-title">{{ food.foodName }} ({{ food.numberOfVote }}sz.)</h4>
-                <p class="card-text">
-                  {{ food.description.length > 450 ? food.description.substring(0, 500) + "..." : food.description }}
+                <p class="card-text" v-if="food.description">
+                  {{ food.description.length > 450 ? food.description.substring(0, 450) + "..." : food.description }}
                 </p>
               </div>
             </div>
