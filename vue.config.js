@@ -3,7 +3,7 @@ module.exports = {
   //     host: "192.168.1.68",
   //     port: 8080
   // },
-  configureWebpack: (config) => {
+  configureWebpack: config => {
     config.devtool = "source-map";
   }
 };
