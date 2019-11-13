@@ -2,7 +2,10 @@
 2. Klónozza munkakönyvtárába a következő repository-kat:
    - https://github.com/nitslaszlo/JedlikVenomTsBackend
    - https://github.com/nitslaszlo/JedlikVenomTsFrontend
-3. Telepítse a klónozott repository-k lokális node csomagjait!
-4. Indítsa el a MongoDB szervert!
-5. Indítsa a backend, majd a frontend oldali alkalmazást!
-6. Minimalizálja a legnépszerűbb étel/ételek lekérdezésénél az adatforgalom mennyiségét! 
+3. Telepítse a klónozott repository-k lokális node csomagjait! (npm i)
+(A fenti három pontot a vizsga előtt végrehajtom)
+
+4. Indítsa el a MongoDB szervert a localhost-on! (m.bat)
+5. Importálja az adatokat a MongoDb szerver CRMdb adatbázisának CsudijoFoodCollection kollekciójába a data.json állományból!
+6. Indítsa el az előkészített backend, majd a frontend oldali alkalmazást!
+7. Minimalizálja a legnépszerűbb étel/ételek lekérdezésénél az adatforgalom mennyiségét! (csak az ételek neve legyen küldve)
