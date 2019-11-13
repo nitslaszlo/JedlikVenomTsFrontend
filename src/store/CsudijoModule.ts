@@ -6,7 +6,6 @@ export default class CsudijoModule extends VuexModule {
   // State (temp fields, direct access from store):
   private __showEditForm: boolean = false;
   private __editedFood: any;
-  // private __polling: any;  // adatok frissítése 30mp-enként
   private __currentPage: number = 1; // aktuálisan megjelenő oldal
   private __perPage: number = 6; // megjelenő rekordok száma
 
@@ -17,8 +16,9 @@ export default class CsudijoModule extends VuexModule {
 
   private config: AxiosRequestConfig = {
     withCredentials: false,
+    // Az ip számot írd át a backend Network címére és portjára, pl.:
     // baseURL: "http://192.168.1.68:3000",
-    baseURL: "http://localhost:3000",
+    baseURL: "http://localhost:3000", // ha egy gépen fut minden (tesztelő böngésző, frontend, backend)
     timeout: 9000
   };
 
