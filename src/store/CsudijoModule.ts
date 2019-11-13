@@ -33,7 +33,7 @@ export default class CsudijoModule extends VuexModule {
   }
 
   @Action
-  public async getAllFoods() {
+  public async getAllFoods(): Promise<any> {
     axios
       .get("/csudijo", this.config)
       .then((res: AxiosResponse) => {
@@ -42,26 +42,22 @@ export default class CsudijoModule extends VuexModule {
           this.context.commit("mutateAllFoods", data);
         }
       })
-      .catch((ex: AxiosError) => {
-        alert(ex.message);
-      });
+      .catch((ex: AxiosError) => alert(ex.message));
   }
 
   @Action
-  public async getTopFoodsList() {
+  public async getTopFoodsList(): Promise<any> {
     axios
       .get("/csudijobest", this.config)
       .then((res: AxiosResponse) => {
         const data: any = res.data;
         this.context.commit("mutateTopFoods", data);
       })
-      .catch((ex: AxiosError) => {
-        alert(ex.message);
-      });
+      .catch((ex: AxiosError) => alert(ex.message));
   }
 
   @Action
-  public async addNewFood(newFood: any) {
+  public async addNewFood(newFood: any): Promise<any> {
     axios
       .post("/csudijo", newFood, this.config)
       .then((res: AxiosResponse) => {
@@ -72,13 +68,11 @@ export default class CsudijoModule extends VuexModule {
           this.context.dispatch("getTopFoodsList");
         }
       })
-      .catch((ex: AxiosError) => {
-        alert(ex.message);
-      });
+      .catch((ex: AxiosError) => alert(ex.message));
   }
 
   @Action
-  public async updateFood(food: any) {
+  public async updateFood(food: any): Promise<any> {
     axios
       .put(`/csudijo/${food._id}`, food, this.config) // update kezdeményezése
       .then((res: AxiosResponse) => {
@@ -89,9 +83,7 @@ export default class CsudijoModule extends VuexModule {
           this.context.dispatch("getTopFoodsList");
         }
       })
-      .catch((ex: AxiosError) => {
-        alert(ex.message);
-      });
+      .catch((ex: AxiosError) => alert(ex.message));
   }
 
   @Action
@@ -108,9 +100,7 @@ export default class CsudijoModule extends VuexModule {
           this.context.dispatch("getTopFoodsList");
           alert(res.data.message);
         })
-        .catch((ex: AxiosError) => {
-          alert(ex.message);
-        });
+        .catch((ex: AxiosError) => alert(ex.message));
     }
   }
 
