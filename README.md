@@ -10,7 +10,7 @@ Projektekben használt technológiák / megoldások:
     - Node.js (https://nodejs.org/en/about/)
 3. Backend development:
     - TypeScript (http://www.typescriptlang.org/)
-    - TS Lint (https://palantir.github.io/tslint/)
+    - ES Lint (https://eslint.org/)
     - nodemon (https://nodemon.io/)
 4. Frontend:
     - Vue.js (https://vuejs.org/)
@@ -22,7 +22,7 @@ Projektekben használt technológiák / megoldások:
     - Axios (https://github.com/axios/axios)
 5. Frontend development:
     - TypeScript (http://www.typescriptlang.org/)
-    - TS Lint (https://palantir.github.io/tslint/)
+    - ES Lint (https://eslint.org/)
     - VUE CLI 3 (https://cli.vuejs.org/)
 
 Rövidítések:
@@ -92,7 +92,7 @@ private config: AxiosRequestConfig = {
 // A frontend fordítását újra kell indítani!
 // Az ip számot írd át a frontend Network címére és portjára és vegyed ki megjegyzésből, pl.:
     devServer: {
-         host: '192.168.1.68',
+         host: "192.168.1.68",
          port: 8080
     }
 
