@@ -12,9 +12,9 @@ Vue.use(BootstrapVue);
 Vue.config.productionTip = false;
 
 new Vue({
-  render: (h: any) => h(App),
   router,
-  store
+  store,
+  render: (h: any) => h(App)
 }).$mount("#app");
 
 // Links
