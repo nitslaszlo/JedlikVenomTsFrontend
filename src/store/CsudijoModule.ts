@@ -12,7 +12,6 @@ export default class CsudijoModule extends VuexModule {
   private _topFoods: any = [];
 
   private config: AxiosRequestConfig = {
-    // withCredentials: true,
     withCredentials: false,
     // Az ip számot írd át a backend Network címére és portjára, pl.:
     // baseURL: "http://192.168.1.68:3000",
