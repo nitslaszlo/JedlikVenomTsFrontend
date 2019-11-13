@@ -40,6 +40,7 @@ export default class CsudijoModule extends VuexModule {
         const data: any = res.data;
         if (data) {
           this.context.commit("mutateAllFoods", data);
+          this.context.dispatch("getTopFoodsList");
         }
       })
       .catch((ex: AxiosError) => alert(ex.message));
@@ -65,7 +66,6 @@ export default class CsudijoModule extends VuexModule {
           alert(res.data.errmsg ? res.data.errmsg : res.data.message);
         } else {
           this.context.dispatch("getAllFoods");
-          this.context.dispatch("getTopFoodsList");
         }
       })
       .catch((ex: AxiosError) => alert(ex.message));
@@ -80,7 +80,6 @@ export default class CsudijoModule extends VuexModule {
           alert(res.data.errmsg ? res.data.errmsg : res.data.message);
         } else {
           this.context.dispatch("getAllFoods");
-          this.context.dispatch("getTopFoodsList");
         }
       })
       .catch((ex: AxiosError) => alert(ex.message));
@@ -97,7 +96,6 @@ export default class CsudijoModule extends VuexModule {
             alert(res.data.errmsg);
           }
           this.context.dispatch("getAllFoods");
-          this.context.dispatch("getTopFoodsList");
           alert(res.data.message);
         })
         .catch((ex: AxiosError) => alert(ex.message));
