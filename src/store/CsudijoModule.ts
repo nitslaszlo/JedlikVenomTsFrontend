@@ -6,13 +6,13 @@ export default class CsudijoModule extends VuexModule {
   // State (temp fields, direct access from store):
   private __showEditForm: boolean = false;
   private __editedFood: any;
-  private __currentPage: number = 1; // aktuálisan megjelenő oldal
-  private __perPage: number = 6; // megjelenő rekordok száma
+  private __currentPage: number = 1; // aktuálisan megjelenő oldal sorszáma
+  private __perPage: number = 6; // oldalanként megjelenő rekordok száma
 
   // State (classic fields)
   private _foods: any = [];
   private _topFoods: any = [];
-  private _numberOfFoods: number = -1;
+  private _numberOfFoods: number = -1; // ételek száma a kollekcióban
 
   private config: AxiosRequestConfig = {
     withCredentials: false,
