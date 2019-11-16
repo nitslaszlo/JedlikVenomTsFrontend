@@ -4,7 +4,7 @@ module.exports = {
     es6: true,
     node: true
   },
-  extends: ["plugin:vue/essential", "@vue/prettier", "@vue/typescript"],
+  extends: ["eslint:recommended", "plugin:vue/recommended", "@vue/prettier", "@vue/typescript"],
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off"

@@ -9,9 +9,9 @@
           <b-col sm="8">
             <b-form-input
               id="iFoodName"
+              v-model="foodName"
               placeholder="Kérem az étel nevét!"
               type="text"
-              v-model="foodName"
             ></b-form-input>
           </b-col>
         </b-row>
@@ -20,7 +20,7 @@
             <label for="iVotes">Szavazatok száma:</label>
           </b-col>
           <b-col sm="3">
-            <b-form-input id="iVotes" placeholder="Szavazatok" type="number" v-model="numberOfVote"></b-form-input>
+            <b-form-input id="iVotes" v-model="numberOfVote" placeholder="Szavazatok" type="number"></b-form-input>
           </b-col>
         </b-row>
       </b-container>

@@ -8,7 +8,7 @@
             <label for="foodInput">Új étel felvétele szavazással:</label>
           </b-col>
           <b-col sm="6">
-            <b-form-input v-model="newFoodName" id="foodInput"></b-form-input>
+            <b-form-input id="foodInput" v-model="newFoodName"></b-form-input>
           </b-col>
           <b-col sm="3">
             <b-button @click="addNewFood()">Felvesz + szavaz</b-button>
@@ -27,9 +27,9 @@
       >
         <template v-slot:cell(action)="row">
           <b-button-group>
-            <b-button size="sm" @click="newVote(row.item)" variant="success">Szavaz</b-button>
-            <b-button size="sm" @click="beforeEditFood(row.item)" variant="info">Szerkeszt</b-button>
-            <b-button size="sm" @click="deleteFood(row.item)" variant="danger">Töröl</b-button>
+            <b-button size="sm" variant="success" @click="newVote(row.item)">Szavaz</b-button>
+            <b-button size="sm" variant="info" @click="beforeEditFood(row.item)">Szerkeszt</b-button>
+            <b-button size="sm" variant="danger" @click="deleteFood(row.item)">Töröl</b-button>
           </b-button-group>
         </template>
       </b-table>

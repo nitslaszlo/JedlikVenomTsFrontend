@@ -15,6 +15,7 @@
             "autoFix": true
         }
     ],
+    "vetur.validation.template": false,
     "editor.formatOnSave": true,
     "[javascript]": {
         "editor.formatOnSave": false,
@@ -36,8 +37,7 @@
         "hu"
     ],
     "spellright.documentTypes": [
-        "latex",
-        "plaintext"
+        "latex"
     ],
     "terminal.integrated.rendererType": "dom",
     "files.autoSave": "afterDelay",
