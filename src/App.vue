@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="content">
     <b-navbar toggleable="sm" type="dark" variant="info" fixed="top">
       <b-navbar-brand href="#">Jedlik</b-navbar-brand>
 
@@ -25,7 +25,7 @@ export default class App extends Vue {}
 </script>
 
 <style>
-#app {
+#content {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
