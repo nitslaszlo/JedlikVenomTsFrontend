@@ -23,7 +23,7 @@
               <img v-if="food.pictureUrl" class="card-img-top" :src="food.pictureUrl" />
               <div class="card-body">
                 <h4 class="card-title">{{ food.foodName }} ({{ food.numberOfVote }}sz.)</h4>
-                <p class="card-text" v-if="food.description">
+                <p v-if="food.description" class="card-text">
                   {{ food.description.length > 450 ? food.description.substring(0, 450) + "..." : food.description }}
                 </p>
               </div>

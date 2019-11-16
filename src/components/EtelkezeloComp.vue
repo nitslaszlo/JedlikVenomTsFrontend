@@ -8,7 +8,7 @@
             <label for="foodInput">Új étel felvétele szavazással:</label>
           </b-col>
           <b-col sm="6">
-            <b-form-input v-model="newFoodName" id="foodInput"></b-form-input>
+            <b-form-input id="foodInput" v-model="newFoodName"></b-form-input>
           </b-col>
           <b-col sm="3">
             <b-button @click="addNewFood()">Felvesz + szavaz</b-button>
@@ -20,9 +20,9 @@
         v-model="currentPage"
         :total-rows="this.$store.getters.numberOfFoods"
         :per-page="this.$store.state.csudijoModule.__perPage"
-        @input="pageChanged()"
         aria-controls="foodsTable"
         hide-goto-end-buttons
+        @input="pageChanged()"
       ></b-pagination>
       <b-table
         id="foodsTable"
@@ -34,7 +34,7 @@
         current-page="1"
       >
         <template v-slot:cell(action)="row">
-          <b-button size="sm" @click="row.toggleDetails" variant="primary">{{
+          <b-button size="sm" variant="primary" @click="row.toggleDetails">{{
             row.detailsShowing ? "Rejt" : "Mutat"
           }}</b-button>
         </template>
@@ -42,9 +42,9 @@
           <b-card>
             <b-row class="mb-2" align-h="center">
               <b-button-group>
-                <b-button size="sm" @click="newVote(row.item)" variant="success">Szavaz</b-button>
-                <b-button size="sm" @click="beforeEditFood(row.item)" variant="warning">Szerkeszt</b-button>
-                <b-button size="sm" @click="deleteFood(row.item)" variant="danger">Töröl</b-button>
+                <b-button size="sm" variant="success" @click="newVote(row.item)">Szavaz</b-button>
+                <b-button size="sm" variant="warning" @click="beforeEditFood(row.item)">Szerkeszt</b-button>
+                <b-button size="sm" variant="danger" @click="deleteFood(row.item)">Töröl</b-button>
               </b-button-group>
             </b-row>
             <b-row class="mb-2">

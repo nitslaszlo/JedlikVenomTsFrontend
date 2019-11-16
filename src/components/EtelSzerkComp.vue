@@ -9,9 +9,9 @@
           <b-col sm="9">
             <b-form-input
               id="iFoodName"
+              v-model="foodName"
               placeholder="Kérem az étel nevét!"
               type="text"
-              v-model="foodName"
             ></b-form-input>
           </b-col>
         </b-row>
@@ -20,7 +20,7 @@
             <label for="iVotes">Szavazatok:</label>
           </b-col>
           <b-col sm="3">
-            <b-form-input id="iVotes" placeholder="Szavazatok" type="number" v-model="numberOfVote"></b-form-input>
+            <b-form-input id="iVotes" v-model="numberOfVote" placeholder="Szavazatok" type="number"></b-form-input>
           </b-col>
         </b-row>
         <b-row class="my-1">
@@ -30,9 +30,9 @@
           <b-col sm="9">
             <b-form-textarea
               id="iDescription"
+              v-model="description"
               placeholder="Kérem az étel leírását!"
               type="text"
-              v-model="description"
               rows="8"
               max-rows="16"
             ></b-form-textarea>
@@ -43,7 +43,7 @@
             <label for="iPictureUrl">Kép URL:</label>
           </b-col>
           <b-col sm="9">
-            <b-form-input id="iPictureUrl" placeholder="Kép URL címe" type="text" v-model="pictureUrl"></b-form-input>
+            <b-form-input id="iPictureUrl" v-model="pictureUrl" placeholder="Kép URL címe" type="text"></b-form-input>
           </b-col>
         </b-row>
       </b-container>
