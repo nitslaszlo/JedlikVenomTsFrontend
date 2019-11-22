@@ -27,7 +27,7 @@
     "vuex-module-decorators": "^0.11.0"
   },
   "devDependencies": {
-    "@types/node": "^12.12.9",
+    "@types/node": "^12.12.11",
     "@vue/cli-plugin-eslint": "^4.0.5",
     "@vue/cli-plugin-router": "^4.0.5",
     "@vue/cli-plugin-typescript": "^4.0.5",
@@ -36,7 +36,7 @@
     "@vue/eslint-config-prettier": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "^2.8.0",
     "@typescript-eslint/parser": "^2.8.0",
-    "eslint": "^6.6.0",
+    "eslint": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^6.0.1",
     "prettier": "^1.19.1",
