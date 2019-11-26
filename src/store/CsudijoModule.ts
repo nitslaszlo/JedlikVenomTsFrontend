@@ -111,6 +111,9 @@ export default class CsudijoModule extends VuexModule {
   private mutateTopFoods(data: any): void {
     this._topFoods = [];
     if (!data.error) {
+      // 9. feladat:
+      // Itt még "átjön" a "top" ételek minden adata, ami felesleges, mert
+      // csak a nevükre van szükségünk
       this._topFoods = data.map((a: any) => a.foodName);
     }
   }
