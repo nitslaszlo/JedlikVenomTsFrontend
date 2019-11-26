@@ -7,6 +7,8 @@ export default class CsudijoModule extends VuexModule {
   private __showEditForm: boolean = false;
   private __editedFood: any;
   private __currentPage: number = 1; // aktuálisan megjelenő oldal sorszáma
+
+  // 10. feladat: Megjelenő ételek számára létrehozott segédváltozó
   private __perPage: number = 6; // oldalanként megjelenő rekordok száma
 
   // State (classic fields)
