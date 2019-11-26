@@ -5,7 +5,9 @@
 3. Telepítse a klónozott repository-k lokális node csomagjait! (npm i)
 (A fenti három pontot a vizsga előtt végrehajtom)
 
-4. Indítsa el a MongoDB szervert a localhost-on! (m.bat)
-5. Importálja az adatokat a MongoDb szerver CRMdb adatbázisának CsudijoFoodCollection kollekciójába a data.json állományból!
-6. Indítsa el az előkészített backend, majd a frontend oldali alkalmazást!
-7. Minimalizálja a legnépszerűbb étel/ételek lekérdezésénél az adatforgalom mennyiségét! (csak az ételek neve legyen küldve)
+4. Hozzon létre az MongoDB adatbázis számára könyvtárat a "C" meghajtón! (C:\data\db)
+5. Készítsen m.bat néven parancsállományt, amely a MongoDb szervert indítja!
+6. Indítsa el a MongoDB szervert a localhost-on!
+7. Importálja az adatokat a MongoDb szerver CRMdb adatbázisának CsudijoFoodCollection kollekciójába a data.json állományból!
+8. Indítsa el az előkészített backend, majd a frontend oldali alkalmazást! (nincs npm i)
+9. Minimalizálja a legnépszerűbb étel/ételek lekérdezésénél az adatforgalom mennyiségét! (csak az ételek neve legyen küldve)
