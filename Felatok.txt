@@ -11,3 +11,6 @@
 7. Importálja az adatokat a MongoDb szerver CRMdb adatbázisának CsudijoFoodCollection kollekciójába a data.json állományból!
 8. Indítsa el az előkészített backend, majd a frontend oldali alkalmazást! (nincs npm i)
 9. Minimalizálja a legnépszerűbb étel/ételek lekérdezésénél az adatforgalom mennyiségét! (csak az ételek neve legyen küldve)
+10. Oldja meg, hogy a kliens csak az aktuálisan megjelenített ételek adatait kérje és kapja a backend oldalról!
+    A megjelenő ételek számát a store-ban egy változóban rögzítse!
+    
