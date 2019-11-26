@@ -72,7 +72,9 @@ export default class CsudijoModule extends VuexModule {
       .then((res: AxiosResponse) => {
         const data: any = res.data;
         if (data) {
+          // Mutáció hívása (commit())
           this.context.commit("mutateFoods", data);
+          // További akciók hívására van lehetőség (dispatch()):
           this.context.dispatch("getTopFoodsList");
           this.context.dispatch("getNumberOfFoods");
         }
@@ -149,6 +151,8 @@ export default class CsudijoModule extends VuexModule {
   private mutateTopFoods(data: any): void {
     this._topFoods = [];
     if (!data.error) {
+      // 9. feladat?
+      // It már nem kell a map(), mert a backend oldalon elvégeztük
       this._topFoods = data;
     }
   }
