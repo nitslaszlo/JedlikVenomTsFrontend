@@ -16,14 +16,6 @@
         </b-row>
       </b-container>
       <EtelSzerkComp v-if="modalShow" />
-      <b-pagination
-        v-model="currentPage"
-        :total-rows="this.$store.getters.numberOfFoods"
-        :per-page="this.$store.state.csudijoModule.__perPage"
-        aria-controls="foodsTable"
-        hide-goto-end-buttons
-        @input="pageChanged()"
-      ></b-pagination>
       <b-table
         id="foodsTable"
         striped
@@ -62,6 +54,14 @@
           </b-card>
         </template>
       </b-table>
+      <b-pagination
+        v-model="currentPage"
+        :total-rows="this.$store.getters.numberOfFoods"
+        :per-page="this.$store.state.csudijoModule.__perPage"
+        aria-controls="foodsTable"
+        hide-goto-end-buttons
+        @input="pageChanged()"
+      ></b-pagination>
     </section>
   </div>
 </template>
