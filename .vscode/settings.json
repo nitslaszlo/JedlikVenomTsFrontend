@@ -57,5 +57,8 @@
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
     "git.autofetchPeriod": 60,
-    "git.autofetch": true
+    "git.autofetch": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
 }
