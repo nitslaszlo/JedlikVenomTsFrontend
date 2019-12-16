@@ -13,7 +13,7 @@ export default new Router({
     {
       component: HomeView,
       name: "home",
-      path: "/"
+      path: "/home"
     },
     {
       component: VuexDemoView,
@@ -23,7 +23,7 @@ export default new Router({
     {
       component: CsudijoView,
       name: "csudijo",
-      path: "/csudijo"
+      path: "/"
     },
     {
       // route level code-splitting
