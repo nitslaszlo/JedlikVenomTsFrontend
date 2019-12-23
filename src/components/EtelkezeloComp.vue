@@ -26,9 +26,7 @@
         current-page="1"
       >
         <template v-slot:cell(action)="row">
-          <b-button size="sm" variant="primary" @click="row.toggleDetails">{{
-            row.detailsShowing ? "Rejt" : "Mutat"
-          }}</b-button>
+          <b-button size="sm" variant="primary" @click="row.toggleDetails">{{ row.detailsShowing ? "Rejt" : "Mutat" }}</b-button>
         </template>
         <template v-slot:row-details="row">
           <b-card>

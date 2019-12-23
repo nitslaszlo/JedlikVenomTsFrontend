@@ -11,25 +11,25 @@
   "vetur.validation.template": false,
   "editor.formatOnSave": true,
   "[javascript]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   "[javascriptreact]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   "[typescript]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   "[typescriptreact]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   "[vue]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   "spellright.language": ["en", "hu"],
   "spellright.documentTypes": ["latex"],
   "terminal.integrated.rendererType": "dom",
   "files.autoSave": "afterDelay",
-  "files.exclude": {
+  "files.exclude": {  
     "**/.git": true,
     "**/.gitignore": false,
     "**/.vscode": false,
