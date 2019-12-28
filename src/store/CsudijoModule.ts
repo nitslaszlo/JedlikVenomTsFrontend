@@ -43,6 +43,7 @@ export default class CsudijoModule extends VuexModule {
       .then((res: AxiosResponse) => {
         const data: any = res.data;
         if (data) {
+          // Mutáció hívása (commit())
           this.context.commit("mutateFoods", data);
           this.context.dispatch("getTopFoodsList");
         }
