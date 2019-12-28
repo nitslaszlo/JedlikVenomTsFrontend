@@ -6,6 +6,8 @@ export default class CsudijoModule extends VuexModule {
   // State (temp fields, direct access from store):
   private __showEditForm: boolean = false;
   private __editedFood: any;
+  private __currentPage: number = 1; // aktuálisan megjelenő oldal sorszáma
+  private __perPage: number = 6; // oldalanként megjelenő rekordok száma
 
   // State (classic fields)
   private _foods: any = [];

@@ -72,8 +72,8 @@ import EtelSzerkComp from "@/components/EtelSzerkComp.vue";
   }
 })
 export default class EtelkezeloComp extends Vue {
-  private currentPageFoods: number = 1;
-  private perPage: number = 5;
+  // private currentPageFoods: number = 1;
+  // private perPage: number = 5;
   private newFoodName: string = "";
   // private polling: number; // adatok 5mp-kénti frissítéséhez
 
