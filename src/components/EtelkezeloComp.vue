@@ -86,7 +86,7 @@ export default class EtelkezeloComp extends Vue {
     // ====================================
     // if (!this.$store.state.csudijoModule.__polling) {
     //   this.$store.state.csudijoModule.__polling = setInterval(() => {
-    //     this.$store.dispatch("getAlloods");
+    //     this.$store.dispatch("getFoods");
     //   }, 30000);
     // }
   }
