@@ -82,13 +82,12 @@ export default class EtelkezeloComp extends Vue {
 
   public mounted() {
     this.$store.dispatch("getAllFoods");
-    // Adatok frissitése 5mp időközönként:
-    // ===================================
-    // if (!this.polling) {
-    //   this.polling = setInterval(() => {
-    //     this.$store.dispatch("getAllFoods");
-    //     this.$store.dispatch("getTopFoodsList");
-    //   }, 5000);
+    // Adatok frissitése 30mp időközönként:
+    // ====================================
+    // if (!this.$store.state.csudijoModule.__polling) {
+    //   this.$store.state.csudijoModule.__polling = setInterval(() => {
+    //     this.$store.dispatch("getAlloods");
+    //   }, 30000);
     // }
   }
 
