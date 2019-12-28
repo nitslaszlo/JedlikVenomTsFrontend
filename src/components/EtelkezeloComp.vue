@@ -23,7 +23,7 @@
         :items="this.$store.getters.foods"
         :fields="foodFields"
         :per-page="this.$store.state.csudijoModule.__perPage"
-        :current-page="currentPageFoods"
+        :current-page="this.$store.state.csudijoModule.__currentPage"
       >
         <template v-slot:cell(action)="row">
           <b-button size="sm" variant="primary" @click="row.toggleDetails">{{ row.detailsShowing ? "Rejt" : "Mutat" }}</b-button>
@@ -53,9 +53,9 @@
         </template>
       </b-table>
       <b-pagination
-        v-model="currentPageFoods"
+        v-model="this.$store.state.csudijoModule.__currentPage"
         :total-rows="this.$store.getters.numberOfFoods"
-        :per-page="perPage"
+        :per-page="this.$store.state.csudijoModule.__perPage"
         aria-controls="foodsTable"
         hide-goto-end-buttons
       ></b-pagination>
