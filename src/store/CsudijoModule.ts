@@ -90,9 +90,8 @@ export default class CsudijoModule extends VuexModule {
   }
 
   @Action
-  public async deleteFood(food: any) {
+  public async deleteFood(food: any): Promise<any> {
     if (confirm("Are you sure you want to delete this food?")) {
-      const tmpFood: any = food;
       axios
         .delete(`/csudijo/${food._id}`, this.config)
         .then((res: AxiosResponse) => {
