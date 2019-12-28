@@ -92,7 +92,7 @@ export default class EtelkezeloComp extends Vue {
   }
 
   public beforeDestroy() {
-    // clearInterval(this.polling); // adatok 5mp-enkénti frissítését törli
+    // clearInterval(this.$store.state.csudijoModule.__polling); // adatok 5mp-enkénti frissítését törli
   }
 
   private newVote(item: any): void {
