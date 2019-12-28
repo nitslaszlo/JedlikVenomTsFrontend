@@ -23,7 +23,7 @@
         :items="this.$store.getters.foods"
         :fields="foodFields"
         :per-page="this.$store.state.csudijoModule.__perPage"
-        :current-page="this.$store.state.csudijoModule.__currentPage"
+        :current-page="currentPage"
       >
         <template v-slot:cell(action)="row">
           <b-button size="sm" variant="primary" @click="row.toggleDetails">{{ row.detailsShowing ? "Rejt" : "Mutat" }}</b-button>
@@ -53,7 +53,7 @@
         </template>
       </b-table>
       <b-pagination
-        v-model="this.$store.state.csudijoModule.__currentPage"
+        v-model="currentPage"
         :total-rows="this.$store.getters.numberOfFoods"
         :per-page="this.$store.state.csudijoModule.__perPage"
         aria-controls="foodsTable"
@@ -127,6 +127,14 @@ export default class EtelkezeloComp extends Vue {
 
   private set modalShow(value: boolean) {
     this.$store.state.csudijoModule.__showEditForm = value;
+  }
+
+  private get currentPage(): number {
+    return this.$store.state.csudijoModule.__currentPage;
+  }
+
+  private set currentPage(value: number) {
+    this.$store.state.csudijoModule.__currentPage = value;
   }
 }
 </script>
