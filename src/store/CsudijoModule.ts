@@ -45,6 +45,7 @@ export default class CsudijoModule extends VuexModule {
         if (data) {
           // Mutáció hívása (commit())
           this.context.commit("mutateFoods", data);
+          // További akciók hívására van lehetőség (dispatch()):
           this.context.dispatch("getTopFoodsList");
         }
       })
