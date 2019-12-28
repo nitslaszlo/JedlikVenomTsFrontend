@@ -37,7 +37,7 @@ export default class CsudijoModule extends VuexModule {
   }
 
   @Action
-  public async getAllFoods(): Promise<any> {
+  public async getFoods(): Promise<any> {
     axios
       .get("/csudijo", this.config)
       .then((res: AxiosResponse) => {
@@ -69,7 +69,7 @@ export default class CsudijoModule extends VuexModule {
         if (res.data.errmsg || res.data.message) {
           alert(res.data.errmsg ? res.data.errmsg : res.data.message);
         } else {
-          this.context.dispatch("getAllFoods");
+          this.context.dispatch("getFoods");
         }
       })
       .catch((ex: AxiosError) => alert(ex.message));
@@ -83,7 +83,7 @@ export default class CsudijoModule extends VuexModule {
         if (res.data.errmsg || res.data.message) {
           alert(res.data.errmsg ? res.data.errmsg : res.data.message);
         } else {
-          this.context.dispatch("getAllFoods");
+          this.context.dispatch("getFoods");
         }
       })
       .catch((ex: AxiosError) => alert(ex.message));
@@ -98,7 +98,7 @@ export default class CsudijoModule extends VuexModule {
           if (res.data.errmsg) {
             alert(res.data.errmsg);
           }
-          this.context.dispatch("getAllFoods");
+          this.context.dispatch("getFoods");
           alert(res.data.message);
         })
         .catch((ex: AxiosError) => alert(ex.message));

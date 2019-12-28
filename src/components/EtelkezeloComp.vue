@@ -81,7 +81,7 @@ export default class EtelkezeloComp extends Vue {
   ];
 
   public mounted() {
-    this.$store.dispatch("getAllFoods");
+    this.$store.dispatch("getFoods");
     // Adatok frissitése 30mp időközönként:
     // ====================================
     // if (!this.$store.state.csudijoModule.__polling) {
