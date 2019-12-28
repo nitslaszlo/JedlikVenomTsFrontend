@@ -8,6 +8,7 @@ export default class CsudijoModule extends VuexModule {
   private __editedFood: any;
   private __currentPage: number = 1; // aktuálisan megjelenő oldal sorszáma
   private __perPage: number = 6; // oldalanként megjelenő rekordok száma
+  private __polling: number;
 
   // State (classic fields)
   private _foods: any = [];
