@@ -38,19 +38,6 @@ export default class CsudijoModule extends VuexModule {
   }
 
   @Action
-  public async getNumberOfFoods(): Promise<any> {
-    axios
-      .get("/csudijo/count", this.config)
-      .then((res: AxiosResponse) => {
-        const data: any = res.data;
-        if (data) {
-          this.context.commit("mutateNumberOfFoods", data);
-        }
-      })
-      .catch((ex: AxiosError) => alert(ex.message));
-  }
-
-  @Action
   public async getFoods(): Promise<any> {
     axios
       .get(`/csudijo/page/${this.__currentPage}/perPage/${this.__perPage}`, this.config)
@@ -120,6 +107,19 @@ export default class CsudijoModule extends VuexModule {
         })
         .catch((ex: AxiosError) => alert(ex.message));
     }
+  }
+
+  @Action
+  public async getNumberOfFoods(): Promise<any> {
+    axios
+      .get("/csudijo/count", this.config)
+      .then((res: AxiosResponse) => {
+        const data: any = res.data;
+        if (data) {
+          this.context.commit("mutateNumberOfFoods", data);
+        }
+      })
+      .catch((ex: AxiosError) => alert(ex.message));
   }
 
   @Mutation
