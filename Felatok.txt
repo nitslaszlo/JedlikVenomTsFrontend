@@ -36,9 +36,24 @@ Feladatok a backend oldalon:
 Feladatok a frontend oldalon:
 =============================
 1. Keresse meg azt a változót, ami a megjelenő rekordok számát határozza meg! Módosítsa értékét 6-ra!
-2. Készítsen a store-ba új akciót getNumberOfFoods() azonosítóval! Az akció axios GET hívással kérdezze le
+2. Készítsen a store-ba új akciómetódust getNumberOfFoods() azonosítóval! A metódus axios GET hívással kérdezze le
    a "/csudijo/count" útvonal API válaszát!
-   Válasz érkezése esetén a mutateNumberOfFoods() mutáció hívásával állítsa be a store-ban
+   Válasz érkezése esetén a mutateNumberOfFoods() új mutáció hívásával állítsa be a store-ban
    az újonnan létrehozott _numberOfFoods szám típusú mezőt!
 3. Módosítsa a numberOfFoods() getter-t, ami a _numberOfFoods mező értékével térjen vissza!
-    
+4. Módosítsa a getFoods() akciómetódust! A GET kérés a "/csudijo/page/${this.__currentPage}/perPage/${this.__perPage}"
+   útvonal API válaszát dolgozza fel! A metódus hivja meg a getNumberOfFoods() akciómetódust is a mutáció hívása után!
+5. Módosítsa a mutateTopFoods() mutációt a backend API alkalmazásban elvégzett módosításnak megfelelően!
+6. A "Rólunk" megjegyzést követő keretben (div) Bootstrap4 rács alkalmazásával jelenítse meg az ételkártyákat
+   reszponzívan a minta szerint Bootstrap4 kártyák felhasználásával!
+   Az oszlopok száma 1(sm), 2(md) és 3(xl) legyen a zárójelben megadott felbontások esetén!
+   Ügyeljen rá, ha az étel leírása és/vagy a kép URL-je hiányzik, akkor ne legyen hibaüzenet a böngésző konzolán!
+   Oldja meg, ha az étel leírása hosszabb, mint 450 karakter, akkor a 450 karakter után csonkolva "..." karakterekkel
+   befejezve jelenjenek meg ezek a leírások!
+   Mintakép helye!
+
+  ételKezelo:
+
+
+  etelszerk :
+
