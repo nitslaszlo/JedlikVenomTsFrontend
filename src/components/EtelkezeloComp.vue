@@ -22,7 +22,7 @@
         bordered
         :items="this.$store.getters.foods"
         :fields="foodFields"
-        :per-page="perPage"
+        :per-page="this.$store.state.csudijoModule.__perPage"
         :current-page="currentPageFoods"
       >
         <template v-slot:cell(action)="row">
