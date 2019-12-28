@@ -94,12 +94,12 @@ export default class EtelkezeloComp extends Vue {
   ];
 
   public mounted() {
-    this.$store.dispatch("getPageOfFoods");
+    this.$store.dispatch("getFoods");
     // Adatok frissitése 30mp időközönként:
     // ====================================
     // if (!this.$store.state.csudijoModule.__polling) {
     //   this.$store.state.csudijoModule.__polling = setInterval(() => {
-    //     this.$store.dispatch("getPageOfFoods");
+    //     this.$store.dispatch("getFoods");
     //   }, 30000);
     // }
   }
@@ -109,7 +109,7 @@ export default class EtelkezeloComp extends Vue {
   }
 
   private pageChanged(): void {
-    this.$store.dispatch("getPageOfFoods");
+    this.$store.dispatch("getFoods");
   }
 
   private newVote(item: any): void {
