@@ -73,7 +73,6 @@ import EtelSzerkComp from "@/components/EtelSzerkComp.vue";
 })
 export default class EtelkezeloComp extends Vue {
   private newFoodName: string = "";
-  // private polling: number; // adatok 5mp-kénti frissítéséhez
 
   private foodFields = [
     { key: "foodName", label: "Étel neve", sortable: false },
