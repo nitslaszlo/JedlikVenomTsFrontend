@@ -37,23 +37,6 @@ export default class CsudijoModule extends VuexModule {
     return this._numberOfFoods;
   }
 
-  // @Action
-  // public async getAllFoods() {
-  //   axios
-  //     .get("/csudijo", this.config)
-  //     .then((res: AxiosResponse) => {
-  //       const data: any = res.data;
-  //       if (data) {
-  //         this.context.commit("mutateAllFoods", data);
-  //         this.context.dispatch("getTopFoodsList");
-  //         this.context.dispatch("getNumberOfFoods");
-  //       }
-  //     })
-  //     .catch((ex: AxiosError) => {
-  //       alert(ex.message);
-  //     });
-  // }
-
   @Action
   public async getNumberOfFoods(): Promise<any> {
     axios
