@@ -43,7 +43,7 @@ export default class CsudijoModule extends VuexModule {
       .then((res: AxiosResponse) => {
         const data: any = res.data;
         if (data) {
-          this.context.commit("mutateAllFoods", data);
+          this.context.commit("mutateFoods", data);
           this.context.dispatch("getTopFoodsList");
         }
       })
@@ -107,7 +107,7 @@ export default class CsudijoModule extends VuexModule {
   }
 
   @Mutation
-  private mutateAllFoods(data: any): void {
+  private mutateFoods(data: any): void {
     this._foods = data;
   }
 
