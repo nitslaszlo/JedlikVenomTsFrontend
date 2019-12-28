@@ -26,11 +26,30 @@
         :current-page="currentPageFoods"
       >
         <template v-slot:cell(action)="row">
-          <b-button-group>
-            <b-button size="sm" variant="success" @click="newVote(row.item)">Szavaz</b-button>
-            <b-button size="sm" variant="info" @click="beforeEditFood(row.item)">Szerkeszt</b-button>
-            <b-button size="sm" variant="danger" @click="deleteFood(row.item)">Töröl</b-button>
-          </b-button-group>
+          <b-button size="sm" variant="primary" @click="row.toggleDetails">{{ row.detailsShowing ? "Rejt" : "Mutat" }}</b-button>
+        </template>
+        <template v-slot:row-details="row">
+          <b-card>
+            <b-row class="mb-2" align-h="center">
+              <b-button-group>
+                <b-button size="sm" variant="success" @click="newVote(row.item)">Szavaz</b-button>
+                <b-button size="sm" variant="warning" @click="beforeEditFood(row.item)">Szerkeszt</b-button>
+                <b-button size="sm" variant="danger" @click="deleteFood(row.item)">Töröl</b-button>
+              </b-button-group>
+            </b-row>
+            <b-row class="mb-2">
+              <b-col sm="3" class="text-sm-right">
+                <b>Étel neve:</b>
+              </b-col>
+              <b-col sm="9">{{ row.item.foodName }}</b-col>
+            </b-row>
+            <b-row class="mb-2">
+              <b-col sm="3" class="text-sm-right">
+                <b>Szavazatok:</b>
+              </b-col>
+              <b-col sm="9">{{ row.item.numberOfVote }}</b-col>
+            </b-row>
+          </b-card>
         </template>
       </b-table>
       <b-pagination
@@ -61,7 +80,7 @@ export default class EtelkezeloComp extends Vue {
   private foodFields = [
     { key: "foodName", label: "Étel neve", sortable: false },
     { key: "numberOfVote", label: "Szavazatok", sortable: false },
-    { key: "action", label: "Akció gombok", sortable: false }
+    { key: "action", label: "Egyéb", sortable: false }
   ];
 
   public mounted() {
