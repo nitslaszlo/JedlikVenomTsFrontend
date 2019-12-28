@@ -1,16 +1,44 @@
+Vizsga előtti feladatok:
+========================
 1. Telepítse és konfigurálja számítógépére a VS-Code Vue.js fejlesztői környezetet!
-2. Klónozza munkakönyvtárába a következő repository-kat:
+2. Telepítse a Postman programot!
+3. Klónozza munkakönyvtárába a következő repository-kat:
    - https://github.com/nitslaszlo/JedlikVenomTsBackend
    - https://github.com/nitslaszlo/JedlikVenomTsFrontend
-3. Telepítse a klónozott repository-k lokális node csomagjait! (npm i)
-(A fenti három pontot a vizsga előtt végrehajtom)
+4. Telepítse a klónozott repository-k lokális node csomagjait! (npm i)
 
-4. Hozzon létre az MongoDB adatbázis számára könyvtárat a "C" meghajtón! (C:\data\db)
-5. Készítsen m.bat néven parancsállományt, amely a MongoDb szervert indítja!
-6. Indítsa el a MongoDB szervert a localhost-on!
-7. Importálja az adatokat a MongoDb szerver CRMdb adatbázisának CsudijoFoodCollection kollekciójába a data.json állományból!
-8. Indítsa el az előkészített backend, majd a frontend oldali alkalmazást! (nincs npm i)
-9. Minimalizálja a legnépszerűbb étel/ételek lekérdezésénél az adatforgalom mennyiségét! (csak az ételek neve legyen küldve)
-10. Oldja meg, hogy a kliens csak az aktuálisan megjelenített ételek adatait kérje és kapja a backend oldalról!
-    A megjelenő ételek számát a store-ban egy változóban rögzítse!
+
+MongoDB előkészítése
+====================
+1. Hozzon létre az MongoDB adatbázis számára könyvtárat a "C" meghajtón! (C:\data\db)
+2. Készítsen m.bat néven parancsállományt, amely a MongoDb szervert indítja!
+3. Indítsa el a MongoDB szervert a localhost-on!
+4. Importálja az adatokat a MongoDb szerver CRMdb adatbázisának CsudijoFoodCollection kollekciójába a data.json állományból!
+
+Feladatok a backend oldalon:
+============================
+1. Indítsa el az előkészített backend alkalmazást!
+2. Bővítse a csudijoSchema sémát két új szöveges mezővel az ételleírások (pictureURL) és a képek URL-jének (description) tátolásához!
+3. Készítsen a csudijoController.ts állományba metódust getNumberOfFoods() néven, ami a CsudijoFoodCollection kollekcióban lévő
+   rekordok számát küldi válaszként a frontend-nek JSON objektumban!
+4. Készítsen a csudijoController.ts állományba metódust getPageOfFoods() néven, ami a CsudijoFoodCollection kollekcióban lévő
+   rekordokat küldi válaszként a frontend-nek! A metódus a rekordokat "oldalakra tagolva" csak a megadott rekordszám/oldal (perPage)
+   darab rekordot küldje a megadott oldaltól (page) kezdve! A két érték (perPage, page) a kérés paramétere lesz!
+   A rekordokat rendezze elsődlegesen a szavazatok száma szerint csökkenő, másodlagosan az ételek neve szerint növekvő sorrendbe!
+5. A getTopFoods() metódus módosításával csökkentse az adatforgalom mennyiségét!
+   Oldja meg, hogy csak az étel/ételek neve legyen az API válaszában küldve a frontendnek!
+6. Oldja meg, hogy a "/csudijo/count" route (útvonal) GET kérésénél a getNumberOfFoods() metódus legyen meghívva!
+7. Oldja meg, hogy a "/csudijo/page/:page/perPage/:perPage" route GET kérésénél a getPageOfFoods() metódus legyen meghívva!
+8. Tesztelje a Postman programmal az új útvonalakat és a getTopFoods() metódus módosított működését!
+   A tesztelés eredményéről készítsen képeket Postman1.jpg, Postman2.jpg és Postman3.jpg néven
+   melyeket a backend projekt főkönyvtárába mentsen!
+
+Feladatok a frontend oldalon:
+=============================
+1. Keresse meg azt a változót, ami a megjelenő rekordok számát határozza meg! Módosítsa értékét 6-ra!
+2. Készítsen a store-ba új akciót getNumberOfFoods() azonosítóval! Az akció axios GET hívással kérdezze le
+   a "/csudijo/count" útvonal API válaszát!
+   Válasz érkezése esetén a mutateNumberOfFoods() mutáció hívásával állítsa be a store-ban
+   az újonnan létrehozott _numberOfFoods szám típusú mezőt!
+3. Módosítsa a numberOfFoods() getter-t, ami a _numberOfFoods mező értékével térjen vissza!
     
