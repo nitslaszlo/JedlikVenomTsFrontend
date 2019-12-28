@@ -25,8 +25,14 @@
   "[vue]": {
     "editor.formatOnSave": true
   },
-  "spellright.language": ["en", "hu"],
-  "spellright.documentTypes": ["latex"],
+  "spellright.language": [
+    "en",
+    "hu"
+  ],
+  "spellright.documentTypes": [
+    "latex",
+    "plaintext"
+  ],
   "terminal.integrated.rendererType": "dom",
   "files.autoSave": "afterDelay",
   "files.exclude": {  
