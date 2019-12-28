@@ -39,6 +39,18 @@
             </b-row>
             <b-row class="mb-2">
               <b-col sm="3" class="text-sm-right">
+                <b>Étel neve:</b>
+              </b-col>
+              <b-col sm="9">{{ row.item.foodName }}</b-col>
+            </b-row>
+            <b-row class="mb-2">
+              <b-col sm="3" class="text-sm-right">
+                <b>Szavazatok:</b>
+              </b-col>
+              <b-col sm="9">{{ row.item.numberOfVote }}</b-col>
+            </b-row>
+            <b-row class="mb-2">
+              <b-col sm="3" class="text-sm-right">
                 <b>Leirás:</b>
               </b-col>
               <b-col sm="9">{{ row.item.description }}</b-col>
