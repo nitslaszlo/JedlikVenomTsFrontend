@@ -3,16 +3,16 @@
     <b-modal v-model="modalShow" title="Rekord szerkesztése" size="lg">
       <b-container>
         <b-row class="my-1">
-          <b-col sm="4">
+          <b-col sm="3">
             <label for="iFoodName">Étel neve:</label>
           </b-col>
-          <b-col sm="8">
+          <b-col sm="9">
             <b-form-input id="iFoodName" v-model="foodName" placeholder="Kérem az étel nevét!" type="text"></b-form-input>
           </b-col>
         </b-row>
         <b-row class="my-1">
-          <b-col sm="4">
-            <label for="iVotes">Szavazatok száma:</label>
+          <b-col sm="3">
+            <label for="iVotes">Szavazatok:</label>
           </b-col>
           <b-col sm="3">
             <b-form-input id="iVotes" v-model="numberOfVote" placeholder="Szavazatok" type="number"></b-form-input>
