@@ -61,5 +61,3 @@ Feladatok a frontend oldalon:
 11. Vegye fel az új mezők (description, pictureURL) szerkesztését biztosító űrlap elemeket a minta szerint
     az étel szerkesztő komponensben!
     Mintakép helye!
-
-
