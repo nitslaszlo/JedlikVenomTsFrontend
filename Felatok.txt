@@ -51,9 +51,15 @@ Feladatok a frontend oldalon:
    Oldja meg, ha az étel leírása hosszabb, mint 450 karakter, akkor a 450 karakter után csonkolva "..." karakterekkel
    befejezve jelenjenek meg ezek a leírások!
    Mintakép helye!
+7. Jelenítse meg az új mezőket (description, pictureURL) a minta szerint az ételkezelő komponensben!
+   Mintakép helye!
+8. A <b-pagination> elem input eseményéhez az étel kezelő komponensben rendeljen eseménykezelőt pageChanged() azonosítóval! 
+   Az eseménykezelőből hívja a store getFoods() akciómetódusát!
+   Javítsa a <b-table> elem megfelelő jellemzőjét úgy, hogy a tagoltan (oldalakként) érkező adatokat helyesen jelenítse meg!
+10. Hozzon létre a store-ban tárolt __editedFood objektum új mezőinek (description, pictureURL) olvasásához és írásához jellemzőket
+    az étel szerkesztő komponensben!
+11. Vegye fel az új mezők (description, pictureURL) szerkesztését biztosító űrlap elemeket a minta szerint
+    az étel szerkesztő komponensben!
+    Mintakép helye!
 
-  ételKezelo:
-
-
-  etelszerk :
 
