@@ -19,7 +19,7 @@
           </b-col>
         </b-row>
       </b-container>
-      <template v-slot:modal-footer>
+      <template #modal-footer>
         <div class="w-100">
           <b-button variant="success" size="sm" class="float-right m-1" @click="afterEditFood">Mentés</b-button>
           <b-button variant="primary" size="sm" class="float-right m-1" @click="modalShow = false">Mégsem</b-button>
