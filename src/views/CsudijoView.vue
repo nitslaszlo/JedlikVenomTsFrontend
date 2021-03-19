@@ -18,7 +18,7 @@
         <h2>Ízelítő étlapunkról</h2>
         <!-- Étel kártyák -->
         <div class="row">
-          <div v-for="food in this.$store.getters.foods" :key="food._id" class="col-sm-12 col-md-6 col-xl-4">
+          <div v-for="food in $store.getters.foods" :key="food._id" class="col-sm-12 col-md-6 col-xl-4">
             <div class="card">
               <img v-if="food.pictureUrl" class="card-img-top" :src="food.pictureUrl" />
               <div class="card-body">

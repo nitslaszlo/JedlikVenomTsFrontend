@@ -20,9 +20,9 @@
         id="foodsTable"
         striped
         bordered
-        :items="this.$store.getters.foods"
+        :items="$store.getters.foods"
         :fields="foodFields"
-        :per-page="this.$store.state.csudijoModule.__perPage"
+        :per-page="$store.state.csudijoModule.__perPage"
         current-page="1"
       >
         <template #cell(action)="row">
@@ -66,8 +66,8 @@
       </b-table>
       <b-pagination
         v-model="currentPage"
-        :total-rows="this.$store.getters.numberOfFoods"
-        :per-page="this.$store.state.csudijoModule.__perPage"
+        :total-rows="$store.getters.numberOfFoods"
+        :per-page="$store.state.csudijoModule.__perPage"
         aria-controls="foodsTable"
         hide-goto-end-buttons
         @input="pageChanged()"
