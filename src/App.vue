@@ -7,7 +7,7 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item :to="{ path: '/csudijo' }">Csudijo</b-nav-item>
+          <b-nav-item :to="{ path: '/' }">Csudijo</b-nav-item>
           <b-nav-item :to="{ path: '/vuexDemo' }">VuexDemo</b-nav-item>
           <b-nav-item :to="{ path: '/home' }">Home</b-nav-item>
           <b-nav-item :to="{ path: '/about' }">About</b-nav-item>
